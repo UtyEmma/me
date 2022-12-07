@@ -164,7 +164,7 @@ export default function Home() {
                                  </div>
                             </div>
                         </div>
-                        <div className='md:w-3/5 md:pl-10 md:py-10'>
+                        <div className='md:w-3/5 md:pl-10 md:py-10 pb-10'>
                             <form action="" method="post" className='space-y-5'>
                                 <h4 className='text-xl'>Send me a Message</h4>
                                 <div className='space-y-1'>
