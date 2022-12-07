@@ -47,7 +47,7 @@ export default function Home() {
                     <div className='flex space-x-3 items-center pt-5'>
                         {/* <MagnifyingGlassIcon className='w-24' /> */}
                         <div className='md:w-3/5 w-full'>
-                            <p className='uppercase  text-lg md:text-3xl'>I have helped over 25 businesses create and deploy their web-based applications.</p>
+                            <p className='uppercase text-xl md:text-3xl'>I have helped over 25 businesses create and deploy their web-based applications.</p>
                         </div>
                         <hr className='border-black md:flex-1' />
                     </div>
@@ -72,7 +72,7 @@ export default function Home() {
                 <div className="max-w-6xl mx-auto px-5 py-5 md:px-0 space-y-5">
                     <div className='flex space-x-3 items-center'>
                         <div className='md:w-3/5 w-full'>
-                            <p className='uppercase text-lg md:text-3xl'>I enjoy taking on projects that help me upscale my skills.</p>
+                            <p className='uppercase text-xl md:text-3xl'>I enjoy taking on projects that help me upscale my skills.</p>
                         </div>
                         <hr className='border-black md:flex-1' />
                     </div>
@@ -98,7 +98,7 @@ export default function Home() {
                     <div className='flex space-x-3 items-center'>
                         {/* <hr className='border-black w-14 md:w-24' /> */}
                         <div className='md:w-3/5 w-full'>
-                            <p className='uppercase text-lg md:text-3xl'>In my spare time, I write on Tech and Human Capital Development.</p>
+                            <p className='uppercase text-xl md:text-3xl'>In my spare time, I write on Tech and Human Capital Development.</p>
                         </div>
                         <hr className='border-black md:flex-1' />
                     </div>
@@ -122,7 +122,7 @@ export default function Home() {
                         <div className="max-w-6xl mx-auto pb-10 md:px-0 space-y-10">
                             <div className='flex space-x-3 items-center'>
                                 <div className='md:w-3/5 w-full'>
-                                    <p className='uppercase text-lg md:text-3xl'>I Love making new connections both online and offline.</p>
+                                    <p className='uppercase text-xl md:text-3xl'>I Love making new connections both online and offline.</p>
                                 </div>
                                 <hr className='border-black md:flex-1' />
                             </div>
@@ -144,21 +144,24 @@ export default function Home() {
                             </div>
                             <div >
                                 <h3 className='text-xl mb-2'>Or Via Social Media</h3>
-                                <div className='grid grid-cols-6 gap-4'>
-                                    <Button className='aspect-square px-2'>
+                                <div className='grid grid-cols-5 gap-4'>
+                                    <Link href="">
                                         <PhoneArrowUpRightIcon style={{
                                         }} className='w-2/3 inline' />
-                                    </Button>
-                                    <Button className='aspect-square px-2' >
-                                        <PhoneArrowUpRightIcon className='w-2/3 inline' />
-                                    </Button>
-                                    <Button className='aspect-square px-2' >
-                                        <PhoneArrowUpRightIcon className='w-2/3 inline' />
-                                    </Button>
-                                    <Button className='aspect-square px-2' >
-                                        <PhoneArrowUpRightIcon className='w-2/3 inline' />
-                                    </Button>
-                                </div>
+                                    </Link>
+                                    <Link href="">
+                                        <PhoneArrowUpRightIcon style={{
+                                        }} className='w-2/3 inline' />
+                                    </Link>
+                                    <Link href="">
+                                        <PhoneArrowUpRightIcon style={{
+                                        }} className='w-2/3 inline' />
+                                    </Link>
+                                    <Link href="">
+                                        <PhoneArrowUpRightIcon style={{
+                                        }} className='w-2/3 inline' />
+                                    </Link>
+                                 </div>
                             </div>
                         </div>
                         <div className='md:w-3/5 md:pl-10 md:py-10'>

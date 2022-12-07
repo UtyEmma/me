@@ -5,7 +5,7 @@ import { Button } from '../../components/Buttons/Button'
 
 export const BlogPostCard = () => {
     return (
-        <div className='border border-black p-3 px-5'>
+        <div className='bg-gray-100 p-5 px-5'>
             <div className='flex justify-between'>
                 <span className='text-xs '><span className='py-0.5 border-r border-black pr-2'>25th Jan, 2022</span>  <span className='pl-0.5'>Web Development</span></span>
             </div>
