@@ -20,17 +20,17 @@ export const ProjectCard = () => {
                     <span className='text-xs font-semibold'>MySQL</span>
                 </div>
 
-                {/* <div className='w-full flex space-x-2 justify-between'>
+                <div className='w-full flex space-x-2 justify-between'>
                     <div className='flex space-x-2'>
-                        <Link href={''} className="inline-flex text-sm bg-black bg-opacity-10 p-1.5 px-5 hover:bg-opacity-25 transition-all duration-500 rounded space-x-2">
+                        <Link href={''} className="inline-flex flex-1 text-sm bg-black font-light bg-opacity-10 p-1.5 px-5 hover:bg-opacity-25 transition-all duration-500 space-x-2">
                             <span>View Project</span> 
                             <LinkIcon className='w-4' /> 
                         </Link>
-                        <Link href={''} className="inline-flex text-sm bg-black bg-opacity-10 p-1.5 px-2 hover:bg-opacity-25 transition-all duration-500 font-semibold rounded space-x-2">
+                        <Link href={''} className="inline-flex text-sm bg-black bg-opacity-10 p-1.5 px-2 hover:bg-opacity-25 transition-all duration-500 space-x-2">
                             <LinkIcon className='w-4' /> 
                         </Link>
                     </div>
-                </div> */}
+                </div>
             </div>
         </div>
     )

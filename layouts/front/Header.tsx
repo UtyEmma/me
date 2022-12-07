@@ -22,10 +22,10 @@ export const Header = ({title} : IHeader) => {
             <nav className='py-6 max-w-6xl mx-auto flex justify-between items-center px-5 md:px-0'>
                 <Link href={'/'} className='font-semibold uppercase flex space-x-1 items-center'>
                     <CommandLineIcon className='w-8' />
-                    <span className='text-lg font-medium mb-0'>UtyEmma.</span>
+                    <span className='text-lg font-light mb-0'>UtyEmma.</span>
                 </Link>   
 
-                <div className='flex space-x-6'>
+                <div className='flex space-x-4'>
                     <ul className='md:flex space-x-10 items-center font-light text-md hidden'>
                         <li className='hover:scale-150 hover:font-medium transition-all duration-300'>
                             <Link href={"#projects"}>Projects</Link>
