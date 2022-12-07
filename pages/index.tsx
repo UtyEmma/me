@@ -6,6 +6,10 @@ import Link from 'next/link'
 import { Button } from '../components/Buttons/Button'
 import { Input } from '../components/Forms/Input'
 import { TextArea } from '../components/Forms/TextArea'
+import Facebook from '../components/Icons/Facebook'
+import Instagram from '../components/Icons/Instagram'
+import Twitter from '../components/Icons/Twitter'
+import Whatsapp from '../components/Icons/WhatsApp'
 import { BlogPostCard } from '../layouts/blogposts/BlogPostCard'
 import { ExperienceItem } from '../layouts/Experience/ExperienceItem'
 import { Footer } from '../layouts/front/Footer'
@@ -144,22 +148,18 @@ export default function Home() {
                             </div>
                             <div >
                                 <h3 className='text-xl mb-2'>Or Via Social Media</h3>
-                                <div className='grid grid-cols-5 gap-4'>
-                                    <Link href="">
-                                        <PhoneArrowUpRightIcon style={{
-                                        }} className='w-2/3 inline' />
+                                <div className='flex justify-start space-x-10'>
+                                    <Link href="" className='transition-all duration-500  hover:-translate-y-2'>
+                                        <Instagram />
                                     </Link>
-                                    <Link href="">
-                                        <PhoneArrowUpRightIcon style={{
-                                        }} className='w-2/3 inline' />
+                                    <Link href="" className='transition-all duration-500  hover:-translate-y-2'>
+                                        <Facebook />
                                     </Link>
-                                    <Link href="">
-                                        <PhoneArrowUpRightIcon style={{
-                                        }} className='w-2/3 inline' />
+                                    <Link href="" className='transition-all duration-500  hover:-translate-y-2'>
+                                        <Twitter />
                                     </Link>
-                                    <Link href="">
-                                        <PhoneArrowUpRightIcon style={{
-                                        }} className='w-2/3 inline' />
+                                    <Link href="" className='transition-all duration-500  hover:-translate-y-2'>
+                                        <Whatsapp />
                                     </Link>
                                  </div>
                             </div>
