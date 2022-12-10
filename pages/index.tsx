@@ -9,6 +9,7 @@ import { TextArea } from '../components/Forms/TextArea'
 import Facebook from '../components/Icons/Facebook'
 import Github from '../components/Icons/Github'
 import Instagram from '../components/Icons/Instagram'
+import { LinkedIn } from '../components/Icons/LinkedIn'
 import Twitter from '../components/Icons/Twitter'
 import Whatsapp from '../components/Icons/WhatsApp'
 import { BlogPostCard } from '../layouts/blogposts/BlogPostCard'
@@ -173,24 +174,27 @@ export default function Home() {
                             <div >
                                 <h3 className='text-xl mb-5'>Or Via Social Media</h3>
                                 <div className='flex justify-start space-x-5 items-center'>
-                                    <div className="w-1/3" >
+                                    <div className="w-1/4" >
                                         <hr className='w-full border-black' />
                                     </div>
 
-                                    <Link href="" className='transition-all duration-500 hover:-translate-y-2'>
-                                        <Instagram size={40} />
-                                    </Link>
                                     <Link href="" className='transition-all duration-500  hover:-translate-y-2'>
-                                        <Facebook size={40} />
+                                        <LinkedIn size={40} />
                                     </Link>
                                     <Link href="" className='transition-all duration-500  hover:-translate-y-2'>
                                         <Twitter size={40} />
                                     </Link>
                                     <Link href="" className='transition-all duration-500  hover:-translate-y-2'>
-                                        <Whatsapp size={40} />
+                                        <Github size={40} />
                                     </Link>
                                     <Link href="" className='transition-all duration-500  hover:-translate-y-2'>
-                                        <Github size={40} />
+                                        <Facebook size={40} />
+                                    </Link>
+                                    <Link href="" className='transition-all duration-500 hover:-translate-y-2'>
+                                        <Instagram size={40} />
+                                    </Link>
+                                    <Link href="" className='transition-all duration-500  hover:-translate-y-2'>
+                                        <Whatsapp size={40} />
                                     </Link>
                                  </div>
                             </div>
