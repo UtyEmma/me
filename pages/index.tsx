@@ -7,6 +7,7 @@ import { Button } from '../components/Buttons/Button'
 import { Input } from '../components/Forms/Input'
 import { TextArea } from '../components/Forms/TextArea'
 import Facebook from '../components/Icons/Facebook'
+import Github from '../components/Icons/Github'
 import Instagram from '../components/Icons/Instagram'
 import Twitter from '../components/Icons/Twitter'
 import Whatsapp from '../components/Icons/WhatsApp'
@@ -187,6 +188,9 @@ export default function Home() {
                                     </Link>
                                     <Link href="" className='transition-all duration-500  hover:-translate-y-2'>
                                         <Whatsapp size={40} />
+                                    </Link>
+                                    <Link href="" className='transition-all duration-500  hover:-translate-y-2'>
+                                        <Github size={40} />
                                     </Link>
                                  </div>
                             </div>
