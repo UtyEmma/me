@@ -57,10 +57,19 @@ export default function Home() {
                     </div>
 
                     <div className='grid md:grid-cols-2 gap-5'>
-                        <ExperienceItem />
-                        <ExperienceItem />
-                        <ExperienceItem />
-                        <ExperienceItem />
+                        <div data-aos="fade-up" data-aos-delay="100">
+                            <ExperienceItem />
+                        </div>
+                        <div data-aos="fade-up" data-aos-delay="200">
+                            <ExperienceItem />
+                        </div>
+                        <div data-aos="fade-up" data-aos-delay="300">
+                            <ExperienceItem />
+                        </div>
+                        <div data-aos="fade-up" data-aos-delay="400">
+                            <ExperienceItem />
+                        </div>
+
                     </div>
 
                     <div className="">
@@ -82,9 +91,15 @@ export default function Home() {
                     </div>
                     <div className="flex flex-col gap-10">
                         <div className="grid md:grid-cols-3 gap-5">
-                            <ProjectCard />
-                            <ProjectCard />
-                            <ProjectCard />
+                            <div data-aos="fade-up" data-aos-delay="100">
+                                <ProjectCard />
+                            </div>
+                            <div data-aos="fade-up" data-aos-delay="200">
+                                <ProjectCard />
+                            </div>
+                            <div data-aos="fade-up" data-aos-delay="300">
+                                <ProjectCard />
+                            </div>
                         </div>
 
                     </div>
@@ -107,10 +122,18 @@ export default function Home() {
                         <hr className='border-black md:flex-1' />
                     </div>
                     <div className="grid md:grid-cols-2 gap-5">
-                        <BlogPostCard />
-                        <BlogPostCard />
-                        <BlogPostCard />
-                        <BlogPostCard />
+                        <div data-aos="fade-up" data-aos-delay="100">
+                            <BlogPostCard />
+                        </div>
+                        <div data-aos="fade-up" data-aos-delay="200">
+                            <BlogPostCard />
+                        </div>
+                        <div data-aos="fade-up" data-aos-delay="300">
+                            <BlogPostCard />
+                        </div>
+                        <div data-aos="fade-up" data-aos-delay="400">
+                            <BlogPostCard />
+                        </div>
                     </div>
                     <div className="">
                         <Link href={''} >
@@ -147,19 +170,23 @@ export default function Home() {
                                 </Button>
                             </div>
                             <div >
-                                <h3 className='text-xl mb-2'>Or Via Social Media</h3>
-                                <div className='flex justify-start space-x-10'>
-                                    <Link href="" className='transition-all duration-500  hover:-translate-y-2'>
-                                        <Instagram />
+                                <h3 className='text-xl mb-5'>Or Via Social Media</h3>
+                                <div className='flex justify-start space-x-6 items-center'>
+                                    <div className="w-1/3" >
+                                        <hr className='w-full border-black' />
+                                    </div>
+
+                                    <Link href="" className='transition-all duration-500 hover:-translate-y-2'>
+                                        <Instagram size={40} />
                                     </Link>
                                     <Link href="" className='transition-all duration-500  hover:-translate-y-2'>
-                                        <Facebook />
+                                        <Facebook size={40} />
                                     </Link>
                                     <Link href="" className='transition-all duration-500  hover:-translate-y-2'>
-                                        <Twitter />
+                                        <Twitter size={40} />
                                     </Link>
                                     <Link href="" className='transition-all duration-500  hover:-translate-y-2'>
-                                        <Whatsapp />
+                                        <Whatsapp size={40} />
                                     </Link>
                                  </div>
                             </div>
