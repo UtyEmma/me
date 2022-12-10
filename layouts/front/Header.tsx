@@ -20,7 +20,7 @@ export const Header = ({title} : IHeader) => {
             </Head>
 
             <nav className='py-6 max-w-6xl mx-auto flex justify-between items-center px-5 md:px-0'>
-                <Link href={'/'} className='font-semibold uppercase flex space-x-1 items-center'>
+                <Link href={'/'} className='uppercase flex space-x-1 items-center'>
                     <CommandLineIcon className='w-8' />
                     <span className='text-xl tracking-widest mb-0'>UtyEmma.</span>
                 </Link>   

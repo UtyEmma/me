@@ -172,7 +172,7 @@ export default function Home() {
                             </div>
                             <div >
                                 <h3 className='text-xl mb-5'>Or Via Social Media</h3>
-                                <div className='flex justify-start space-x-6 items-center'>
+                                <div className='flex justify-start space-x-5 items-center'>
                                     <div className="w-1/3" >
                                         <hr className='w-full border-black' />
                                     </div>
