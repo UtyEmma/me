@@ -141,11 +141,17 @@ export default function Home() {
                     </div>
 
                     <div className="flex flex-col gap-10">
-                        <div className="grid md:grid-cols-2 gap-5 md:gap-1">
-                            <div data-aos="fade-up" data-aos-delay="100">
+                        <div className="grid md:grid-cols-2 gap-5">
+                            <div >
                                 <ProjectCard />
                             </div>
-                            <div data-aos="fade-up" data-aos-delay="200">
+                            <div >
+                                <ProjectCard />
+                            </div>
+                            <div >
+                                <ProjectCard />
+                            </div>
+                            <div >
                                 <ProjectCard />
                             </div>
                         </div>
@@ -169,17 +175,17 @@ export default function Home() {
                         <div>
                             <p className='capitalize text-xl font-semibold md:text-2xl'>03. Blog Posts</p>
                         </div>
-                        <hr className='border-black md:flex-1' />
+                        <hr className='border-black flex-1' />
                     </div>
 
                     <div className="grid md:grid-cols-3 gap-5">
-                        <div data-aos="fade-up" data-aos-delay="100">
+                        <div >
                             <BlogPostCard />
                         </div>
-                        <div data-aos="fade-up" data-aos-delay="200">
+                        <div >
                             <BlogPostCard />
                         </div>
-                        <div data-aos="fade-up" data-aos-delay="300">
+                        <div >
                             <BlogPostCard />
                         </div>
                     </div>
@@ -191,60 +197,59 @@ export default function Home() {
                 </div>
             </section>
 
-            <section id='contact' className='bg-black text-white py-10'>
+            <section id='contact' className='bg-black text-white pt-10'>
                 <div className="max-w-6xl mx-auto px-5 md:px-0">
                     <div className=' text-center mt-5'>
                         <p className='text-xl uppercase md:text-4xl'>Contact Me</p>
                     </div>
                 
                     <div className="space-y-6  mt-5">
-                            <div className='space-y-5'>
-                                <Button className='w-full flex items-center space-x-4'>
-                                    <PhoneArrowUpRightIcon className='w-8' />
-                                    <p className='text-lg md:text-xl'>+234 903 870 5881</p>
-                                </Button>
-                                <Button className='w-full flex items-center space-x-4'>
-                                    <EnvelopeIcon className='w-8' />
-                                    <p className='text-lg md:text-xl lowercase'>utyemma@gmail.com</p>
-                                </Button>
+                        <div className='space-y-5 mb-10'>
+                            <Button className='w-full flex items-center space-x-4'>
+                                <PhoneArrowUpRightIcon className='w-8' />
+                                <p className='text-xl md:text-2xl'>+234 903 870 5881</p>
+                            </Button>
+                            <Button className='w-full flex items-center space-x-4'>
+                                <EnvelopeIcon className='w-8' />
+                                <p className='text-xl md:text-2xl lowercase'>utyemma@gmail.com</p>
+                            </Button>
+                        </div>
+
+                        <div className='flex justify-center md:justify-between gap-x-4 items-center w-full'>
+                            <hr className='w-1/4 border-white hidden md:block' />
+                            <div className='space-x-5 flex flex-1 justify-center items-center'>
+                                <Link href="" className='transition-all duration-500 flex items-center  gap-x-2 text-white  hover:-translate-y-2'>
+                                    <LinkedIn size={30} /> <span className='hidden md:block'>LinkedIn</span>
+                                </Link>
+                                <hr className='w-3 hidden md:block' />
+                                <Link href="" className='transition-all duration-500 flex items-center gap-x-2  hover:-translate-y-2'>
+                                    <Twitter size={30} /> <span className='hidden md:block'>Twitter</span>
+                                </Link>
+                                <hr className='w-3 hidden md:block' />
+                                <Link href="" className='transition-all duration-500 flex items-center gap-x-2 hover:-translate-y-2'>
+                                    <Github size={30} /> <span className='hidden md:block'>Github</span>
+                                </Link>
+                                <hr className='w-3 hidden md:block' />
+                                <Link href="" className='transition-all duration-500 flex items-center gap-x-2  hover:-translate-y-2'>
+                                    <Facebook size={30} /> <span className='hidden md:block'>Facebook</span>
+                                </Link>
+                                <hr className='w-3 hidden md:block' />
+                                <Link href="" className='transition-all duration-500 flex items-center gap-x-2 hover:-translate-y-2'>
+                                    <Instagram size={30} /> <span className='hidden md:block'>Instagram</span>
+                                </Link>
+                                <hr className='w-3 hidden md:block' />
+                                <Link href="" className='transition-all duration-500 flex items-center gap-x-2 hover:-translate-y-2'>
+                                    <Whatsapp size={30} /> <span className='hidden md:block'>WhatsApp</span>
+                                </Link>
                             </div>
 
-                            <div >
-                                <div className='flex justify-center md:justify-between gap-x-4 items-center w-full '>
-                                    <hr className='w-1/4 border-white hidden md:block' />
-
-                                    <div className='space-x-4 flex flex-1 justify-center items-center'>
-                                        <Link href="" className='transition-all duration-500 flex items-center  gap-x-2 text-white  hover:-translate-y-2'>
-                                            <LinkedIn size={25} /> <span className='hidden md:block'>LinkedIn</span>
-                                        </Link>
-                                        <hr className='w-3 hidden md:block' />
-                                        <Link href="" className='transition-all duration-500 flex items-center gap-x-2  hover:-translate-y-2'>
-                                            <Twitter size={25} /> <span className='hidden md:block'>Twitter</span>
-                                        </Link>
-                                        <hr className='w-3 hidden md:block' />
-                                        <Link href="" className='transition-all duration-500 flex items-center gap-x-2 hover:-translate-y-2'>
-                                            <Github size={25} /> <span className='hidden md:block'>Github</span>
-                                        </Link>
-                                        <hr className='w-3 hidden md:block' />
-                                        <Link href="" className='transition-all duration-500 flex items-center gap-x-2  hover:-translate-y-2'>
-                                            <Facebook size={25} /> <span className='hidden md:block'>Facebook</span>
-                                        </Link>
-                                        <hr className='w-3 hidden md:block' />
-                                        <Link href="" className='transition-all duration-500 flex items-center gap-x-2 hover:-translate-y-2'>
-                                            <Instagram size={25} /> <span className='hidden md:block'>Instagram</span>
-                                        </Link>
-                                        <hr className='w-3 hidden md:block' />
-                                        <Link href="" className='transition-all duration-500 flex items-center gap-x-2 hover:-translate-y-2'>
-                                            <Whatsapp size={25} /> <span className='hidden md:block'>WhatsApp</span>
-                                        </Link>
-                                    </div>
-
-                                    <hr className='w-1/4 border-white hidden md:block' />
-                                 </div>
+                            <hr className='w-1/4 border-white hidden md:block' />
                             </div>
                     </div>
 
-                    <Footer />  
+                    <div className="mt-10">
+                        <Footer />  
+                    </div>
                 </div>
                 
 
