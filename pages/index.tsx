@@ -33,7 +33,7 @@ export default function Home() {
 
                                 <div className="grid md:grid-cols-5 mt-10">
                                     <div className='md:col-span-3'>
-                                        <p className='text-2xl md:text-2xl font-extralight'>I am a <span className='italic font-medium'>highly skilled Full Stack Web Developer</span> based in Nigeria. I am interested in <span className='italic font-medium'>building tech-driven solutions</span> that will create a better future for Humanity!</p>
+                                        <p className='text-2xl md:text-3xl font-extralight'>I am a <span className='italic font-medium'>highly skilled Full Stack Web Developer</span> based in Nigeria. I am interested in <span className='italic font-medium'>building tech-driven solutions</span> that will create a better future for Humanity!</p>
                                     </div>
                                 </div>
                             <div className='flex space-x-3 my-10'>
@@ -51,7 +51,7 @@ export default function Home() {
                                     <LinkedIn size={25} />
                                     <Github size={25} />
                                     <Whatsapp size={25} />
-                                    <div style={{width: '1px'}} className='bg-gray-500 h-20 md:block hidden border-left'></div>
+                                    <div style={{width: '1px'}} className='bg-white h-20 md:block hidden border-left'></div>
                                 </div>
                             </div>
                         </div>
@@ -135,7 +135,7 @@ export default function Home() {
                 <div className="max-w-6xl mx-auto px-5 py-5 md:px-0 space-y-5">
                     <div className='flex space-x-5 items-center pt-5'>
                         <div>
-                            <p className='capitalize text-xl font-semibold md:text-2xl'>02. Projects</p>
+                            <p className='capitalize text-xl md:text-2xl'>02. Projects</p>
                         </div>
                         <hr className='border-black flex-1' />
                     </div>
@@ -173,7 +173,7 @@ export default function Home() {
                 <div className="max-w-6xl mx-auto px-5 py-10 md:px-0 space-y-5">
                     <div className='flex space-x-5 items-center pt-5'>
                         <div>
-                            <p className='capitalize text-xl font-semibold md:text-2xl'>03. Blog Posts</p>
+                            <p className='capitalize text-xl md:text-2xl'>03. Blog Posts</p>
                         </div>
                         <hr className='border-black flex-1' />
                     </div>

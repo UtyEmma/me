@@ -7,7 +7,7 @@ export const ProjectCard = () => {
     return (
         <div className='md:aspect-video aspect-square bg-gray-200 relative flex flex-col justify-end group overflow-hidden'>
 
-            <div className='aspect-auto flex flex-col justify-center space-y-2 bg-black bg-opacity-70 text-white p-5 transition-all duration-500 md:translate-y-full group-hover:translate-y-0'>
+            <div className='aspect-auto flex flex-col justify-center space-y-2 bg-black bg-opacity-80 text-white p-5 transition-all duration-500 md:translate-y-full group-hover:translate-y-0'>
                 <div>
                     <h3 className='font-semibold text-sm'>Bayof</h3>
                     {/* <p className='text-sm mb-0'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet.</p> */}
