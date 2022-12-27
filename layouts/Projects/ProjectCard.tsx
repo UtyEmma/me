@@ -5,20 +5,18 @@ import Github from '../../components/Icons/Github'
 
 export const ProjectCard = () => {
     return (
-        <div className=''>
-            <div className='aspect-square bg-gray-200 relative'>
+        <div className='md:aspect-video aspect-square bg-gray-200 relative flex flex-col justify-end group overflow-hidden'>
 
-            </div>
-            <div className='aspect-auto py-1 flex flex-col justify-center space-y-2'>
+            <div className='aspect-auto flex flex-col justify-center space-y-2 bg-black bg-opacity-70 text-white p-5 transition-all duration-500 md:translate-y-full group-hover:translate-y-0'>
                 <div>
-                    <h3 className='font-semibold'>Leadaa Africa Ecommerce</h3>
-                    <p className='text-sm mb-0'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet.</p>
+                    <h3 className='font-semibold text-sm'>Bayof</h3>
+                    {/* <p className='text-sm mb-0'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet.</p> */}
                 </div>
                 <div className='flex flex-wrap gap-1'>
-                    <span className='text-xs font-semibold'>Laravel -</span>
-                    <span className='text-xs font-semibold'>React -</span>
-                    <span className='text-xs font-semibold'>PHP -</span>
-                    <span className='text-xs font-semibold'>MySQL</span>
+                    <span className='text-xs font-medium'>Laravel -</span>
+                    <span className='text-xs font-medium'>React -</span>
+                    <span className='text-xs font-medium'>PHP -</span>
+                    <span className='text-xs font-medium'>MySQL</span>
                 </div>
 
                 <div className='w-full flex space-x-2 justify-between'>

@@ -11,8 +11,8 @@ interface IDashboardLayout extends PropsWithChildren<any> {
 export const DashboardLayout = ({children, title}: IDashboardLayout) => {
     return (
         <FrontLayout title='Dashboard'>
-            <div className="min-h-screen pb-10">
-                <div className="flex flex-col h-full">
+            <div className="min-h-screen">
+                <div className="flex flex-col justify-between  h-full">
                     <Header title='Dashboard' />
 
                     <main className='max-w-6xl mx-auto px-5 w-full flex-1 grid grid-cols-4 gap-10  md:px-0 mt-10'>
@@ -61,7 +61,9 @@ export const DashboardLayout = ({children, title}: IDashboardLayout) => {
                         </div>
                     </main>
 
-                    <Footer />
+                    <div className='mt-10'>
+                        <Footer />
+                    </div>
                 </div>
             </div>
         </FrontLayout>
