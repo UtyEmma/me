@@ -9,14 +9,14 @@ export const ProjectCard = () => {
 
             <div className='aspect-auto flex flex-col justify-center space-y-2 bg-black bg-opacity-80 text-white p-5 transition-all duration-500 md:translate-y-full group-hover:translate-y-0'>
                 <div>
-                    <h3 className='font-semibold text-sm'>Bayof</h3>
+                    <h3 className='font-medium text-sm'>Bayof</h3>
                     {/* <p className='text-sm mb-0'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet.</p> */}
                 </div>
-                <div className='flex flex-wrap gap-1'>
-                    <span className='text-xs font-medium'>Laravel -</span>
-                    <span className='text-xs font-medium'>React -</span>
-                    <span className='text-xs font-medium'>PHP -</span>
-                    <span className='text-xs font-medium'>MySQL</span>
+                <div className='flex text-xs flex-wrap gap-1'>
+                    <span>Laravel -</span>
+                    <span>React -</span>
+                    <span>PHP -</span>
+                    <span>MySQL</span>
                 </div>
 
                 <div className='w-full flex space-x-2 justify-between'>

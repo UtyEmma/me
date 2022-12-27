@@ -251,8 +251,6 @@ export default function Home() {
                         <Footer />  
                     </div>
                 </div>
-                
-
             </section>
         </FrontLayout>
     )
