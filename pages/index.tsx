@@ -205,10 +205,10 @@ export default function Home() {
                 
                     <div className="space-y-6  mt-5">
                         <div className='space-y-5 mb-10'>
-                            <Button className='w-full flex items-center space-x-4'>
+                            {/* <Button className='w-full flex items-center space-x-4'>
                                 <PhoneArrowUpRightIcon className='w-8' />
                                 <p className='text-xl md:text-2xl'>+234 903 870 5881</p>
-                            </Button>
+                            </Button> */}
                             <Button className='w-full flex items-center space-x-4'>
                                 <EnvelopeIcon className='w-8' />
                                 <p className='text-xl md:text-2xl lowercase'>utyemma@gmail.com</p>
