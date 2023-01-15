@@ -20,15 +20,16 @@ import { Header } from '../layouts/front/Header'
 import { ProjectCard } from '../layouts/Projects/ProjectCard'
 
 export default function Home() {
+    
     return (
         <FrontLayout title='Utibe-Abasi Emmanuel'>
-            <div className='text-white bg-black' >
+            <div className='text-white relative bg-gray-800'>
                 <Header title={"Utibe-Abasi Emmanuel"} />
                 <div className="max-w-6xl mx-auto md:pt-36 pb-20 md:pb-36 pt-24 px-5 md:px-0 relative">
                     <div className="flex flex-col">
                         <div >
                             <p className='md:text-xl text-lg px-1 mb-2'>Hi there, I am</p>
-                            <h1 className='md:text-6xl text-4xl uppercase px-0 mb-2 font-light tracking-wider text-white'>Utibe-Abasi  Emmanuel</h1>
+                            <h1 className='md:text-6xl text-4xl uppercase px-0 mb-2 font-light tracking-wider'>Utibe-Abasi  Emmanuel</h1>
                             <p className='uppercase font-medium text-lg md:text-2xl'>Full Stack Web Developer</p>
 
                                 <div className="grid md:grid-cols-5 mt-10">
@@ -204,12 +205,8 @@ export default function Home() {
                     </div>
                 
                     <div className="space-y-6  mt-5">
-                        <div className='space-y-5 mb-10'>
-                            {/* <Button className='w-full flex items-center space-x-4'>
-                                <PhoneArrowUpRightIcon className='w-8' />
-                                <p className='text-xl md:text-2xl'>+234 903 870 5881</p>
-                            </Button> */}
-                            <Button className='w-full flex items-center space-x-4'>
+                        <div className='space-y-5 mb-10 text-center'>
+                            <Button className='inline-flex  mx-auto items-center space-x-4'>
                                 <EnvelopeIcon className='w-8' />
                                 <p className='text-xl md:text-2xl lowercase'>utyemma@gmail.com</p>
                             </Button>
