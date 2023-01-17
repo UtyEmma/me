@@ -2,16 +2,18 @@ import { MongoClient } from "mongodb";
 import process from 'process'
 
 
-async function mongo (db: string) {
+function mongo (db: string) {
     const client = new MongoClient(process.env.DB_HOST!)
-    const mongo = client.connect()
-    const connection = await mongo
-    return connection.db(db)
+    return client.db(db)
 }
 
-function collection(collection : string)  {
-    return mongo('utyemma').then(db => db.collection(collection))
+mongo.collection = (collection : string) =>  {
+    return mongo('utyemma').collection(collection)
 }
 
-mongo.collection = collection
+mongo.timestamps = {
+    createdAt: new Date(),
+    updatedAt: new Date()
+}
+
 export default mongo;

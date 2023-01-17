@@ -4,7 +4,7 @@ import Tags, { TagifyTagsReactProps } from "@yaireo/tagify/dist/react.tagify" //
 import "@yaireo/tagify/dist/tagify.css"
 
 
-export const TagsInput = ({defaultValue, ...props} : TagifyTagsReactProps & {defaultValue?: any}) => {
+export const TagsInput = ({defaultValue, className, ...props} : TagifyTagsReactProps & {defaultValue?: any}) => {
 
     const input : any = useRef()
     const [tags, setTags] = useState<string>(defaultValue ?? "") 
@@ -16,7 +16,7 @@ export const TagsInput = ({defaultValue, ...props} : TagifyTagsReactProps & {def
 
     return (
         <>
-            <Tags {...props} tagifyRef={input} defaultValue={defaultValue}  onChange={onChange} />
+            <Tags {...props} tagifyRef={input} defaultValue={defaultValue} className={className}   onChange={onChange} />
         </>
     )
 }
