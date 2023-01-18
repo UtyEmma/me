@@ -16,10 +16,9 @@ export const ProjectCard = ({project}: IProjectCardProps) => {
                 <div className="p-10">
                     <img src={project.image} className="object-cover object-center drop-shadow-2xl min-w-full min-h-full group-hover:scale-105 transition-all duration-500" alt="" />
                 </div>
-                {/* <div className='absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-10' /> */}
             </div>
             
-            <div className='aspect-auto flex flex-col justify-center space-y-2 text-black p-5 duration-500 '>
+            <div className='aspect-auto flex flex-col justify-center space-y-2 text-black py-3 duration-500 '>
                 <div>
                     <div className='flex text-xs flex-wrap gap-1'>
                         {

@@ -1,4 +1,4 @@
-import { ArrowDownOnSquareIcon, ArrowRightIcon, DocumentArrowDownIcon, EnvelopeIcon, MagnifyingGlassIcon, PhoneArrowUpRightIcon, UserIcon } from '@heroicons/react/24/outline'
+import { ArrowDownOnSquareIcon, ArrowRightIcon, DocumentArrowDownIcon, EnvelopeIcon, MagnifyingGlassIcon, PhoneArrowUpRightIcon, PhoneIcon, UserIcon } from '@heroicons/react/24/outline'
 import { ArrowDownIcon, BriefcaseIcon, TvIcon } from '@heroicons/react/24/outline'
 import Head from 'next/head'
 import Image from 'next/image'
@@ -23,6 +23,7 @@ import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import Typewriter from 'typewriter-effect';
+import { SkillBlock } from './partials/SkillBlock'
 
 
 interface IHomeProps {
@@ -36,7 +37,25 @@ export default function Home({projects}: IHomeProps) {
         infinite: true,
         speed: 500,
         slidesToShow: 2,
-        slidesToScroll: 1
+        slidesToScroll: 1,
+        responsive: [
+            {
+              breakpoint: 700,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2,
+                initialSlide: 2
+              }
+            },
+            {
+              breakpoint: 480,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+              }
+            }
+          ]
+    
     };
 
     return (
@@ -58,15 +77,17 @@ export default function Home({projects}: IHomeProps) {
                 <div className="max-w-7xl mx-auto pb-10 pt-10 md:pt-24 px-5 md:px-0 relative">
                     <div className="md:flex items-center">
                         <div className='md:w-1/2' >
-                            <p className='md:text-2xl tracking-wide text-xl px-1 mb-2 bg-clip-text bg-gradient-to-r from-purple-800 to-purple-500 text-transparent '>Hi there, I am</p>
-                            <h1 className='md:text-5xl text-4xl uppercase px-0 mb-2 font-light tracking-wide '>Utibe-Abasi  Emmanuel</h1>
-                            <p className='uppercase font-medium tracking-wide text-xl md:text-2xl text-gray-500  flex gap-x-1'><span><Typewriter
-                                                options={{
-                                                    strings: ['Full Stack Developer', 'Laravel / PHP Developer', 'React JS Developer'],
-                                                    autoStart: true,
-                                                    loop: true,
-                                                }}
-                                                /></span> </p>
+                            <p className='md:text-2xl tracking-wide text-xl px-1 mb-2 bg-clip-text bg-gradient-to-r from-purple-800 to-purple-500 text-transparent '><span className='text-purple-500'>👋</span> Hi there, I am</p>
+                            <h1 className='md:text-5xl font-medium text-4xl  px-0 mb-2  tracking-wide'>Utibe-Abasi  Emmanuel</h1>
+                            <div className='uppercase tracking-wide text-xl md:text-2xl text-gray-500  flex gap-x-1'>
+                                <Typewriter
+                                    options={{
+                                        strings: ['Full Stack Developer', 'Laravel/PHP Developer', 'ReactJS Developer'],
+                                        autoStart: true,
+                                        loop: true,
+                                    }}
+                                />
+                            </div>
 
                             <div className="grid  mt-10">
                                 <div className='md:col-span-3'>
@@ -82,16 +103,22 @@ export default function Home({projects}: IHomeProps) {
                         </div>
 
                         <div className='md:w-1/2'>
-                            <div className='md:w-2/3 mx-auto border bg-transparent p-3 mb-10 group relative'>
+                            <div className='md:w-2/3 mx-auto  bg-transparent p-3 mb-10 group relative drop-shadow-xl'>
+                                {/* <span className="absolute inset-0  bg-purple-500 bg-opacity-20 blur-lg transition-transform  duration-300" ></span> */}
+                                <span
+                                    className="absolute inset-0 border bg-white"
+                                ></span>
+
                                 <div className="aspect-square bg-gray-200 mb-2 overflow-hidden relative">
-                                    <img src="/images/utyemma.jpg" alt="" className='object-cover min-h-full group-hover:scale-125 transition-all duration-1000' />
+                                    <img src="/images/utyemma.jpg" alt="" className='object-cover min-h-full group-hover:scale-105 transition-all duration-1000' />
+                                </div>
+                                
+                                <div className="mt-1 p-5 bg-purple-700 flex justify-center relative gap-x-1 z-50">
+                                    <div className="p-1 bg-white bg-opacity-70 rounded-full"></div>
+                                    <div className="p-1 bg-white bg-opacity-70 rounded-full"></div>
+                                    <div className="p-1 bg-white bg-opacity-70 rounded-full"></div>
                                 </div>
 
-                                <div className="mt-1 p-5 bg-purple-700 flex justify-center gap-x-1">
-                                    <div className="p-1 bg-white bg-opacity-70 rounded-full"></div>
-                                    <div className="p-1 bg-white bg-opacity-70 rounded-full"></div>
-                                    <div className="p-1 bg-white bg-opacity-70 rounded-full"></div>
-                                </div>
                             </div>
                         </div>
 
@@ -126,7 +153,7 @@ export default function Home({projects}: IHomeProps) {
                 </div>
             </div>
 
-            <section id='about' className='bg-purple-50'>
+            <section id='about' className='bg-gradient-to-b from-purple-50 to-white'>
                 <div className="max-w-7xl mx-auto px-5 py-20 md:px-0 space-y-5">
                     <div className=' flex space-x-5 items-center'>
                         <div className='md:w-1/2'>
@@ -138,43 +165,16 @@ export default function Home({projects}: IHomeProps) {
 
                     <div className='md:flex gap-10'>
                         <div className='md:w-1/2 '>
-                            <div className='flex justify-start flex-wrap gap-5'>
-                                <div className="flex-auto flex justify-center border items-center bg-gray-100 text-gray-400 p-5 px-10">
-                                    <span className="text-lg">React JS</span>
-                                </div>
-                                <div className="flex-auto flex justify-center border items-center bg-gray-100 text-gray-400 rounded-lg p-5 px-10">
-                                    <span className="text-lg">Angular 2+</span>
-                                </div>
-                                <div className="flex-auto flex justify-center border items-center bg-gray-100 text-gray-400 rounded-lg p-5 px-10">
-                                    <span className="text-lg">PHP</span>
-                                </div>
-                                <div className="flex-auto flex justify-center border items-center bg-gray-100 text-gray-400 rounded-lg p-5 px-10">
-                                    <span className="text-lg">Laravel</span>
-                                </div>
-                                <div className="flex-auto flex justify-center border items-center bg-gray-100 text-gray-400 rounded-lg p-5 px-10">
-                                    <span className="text-lg">MySQL</span>
-                                </div>
-                                <div className="flex-auto flex justify-center border items-center bg-gray-100 text-gray-400 rounded-lg p-5 px-10">
-                                    <span className="text-lg">Mongo DB</span>
-                                </div>
-                                <div className="flex-auto flex justify-center border items-center bg-gray-100 text-gray-400 rounded-lg p-5 px-10">
-                                    <span className="text-lg">Node JS</span>
-                                </div>
-                                <div className="flex-auto flex justify-center border items-center bg-gray-100 text-gray-400 rounded-lg p-5 px-10">
-                                    <span className="text-lg">Typescript</span>
-                                </div>
-                                <div className="flex-auto flex justify-center border items-center bg-gray-100 text-gray-400 rounded-lg p-5 px-10">
-                                    <span className="text-lg">Golang</span>
-                                </div>
-                                <div className="flex-auto flex justify-center border items-center bg-gray-100 text-gray-400 rounded-lg p-5 px-10">
-                                    <span className="text-lg">Next JS</span>
-                                </div>
-                                <div className="flex-auto flex justify-center border items-center bg-gray-100 text-gray-400 rounded-lg p-5 px-10">
-                                    <span className="text-lg">Javascript</span>
-                                </div>
-                                <div className="flex-auto flex justify-center border items-center bg-gray-100 text-gray-400 rounded-lg p-5 px-10">
-                                    <span className="text-lg">Vuew</span>
-                                </div>
+                            <div className='flex justify-start flex-wrap gap-3'>
+                                <SkillBlock img='/images/social/javascript.svg' title='Javascript' />
+                                <SkillBlock img='/images/social/reactjs.svg' title='React JS' />
+                                <SkillBlock img='/images/social/angularjs.svg' title='Angular JS' />
+                                <SkillBlock img='/images/social/mongodb.svg' title='Mongo DB' />
+                                <SkillBlock img='/images/social/typescript.svg' title='Typescript' />
+                                <SkillBlock img='/images/social/nodejs.svg' title='Node JS' />
+                                <SkillBlock img='/images/social/golang.svg' title='Golang' />
+                                <SkillBlock img='/images/social/git.svg' title='Git' />
+                                <SkillBlock img='/images/social/mysql.svg' title='MySQL' />
                             </div>
                         </div>
                         <div className='md:w-1/2 w-full mt-6 md:mt-0 space-y-6'>
@@ -209,7 +209,7 @@ export default function Home({projects}: IHomeProps) {
                         <Slider {...settings}  >
                             {
                                 projects.map(project => (
-                                    <div className="px-2" key={project._id}>
+                                    <div className="md:px-2" key={project._id}>
                                         <ProjectCard project={project} />
                                     </div>
                                 ))
@@ -228,7 +228,7 @@ export default function Home({projects}: IHomeProps) {
                 </div>
             </section>
 
-            <section id='blog' className='bg-gray-50'>
+            <section id='blog' className='bg-gradient-to-t from-gray-100 to-white'>
                 <div className="max-w-7xl mx-auto px-5 py-20 md:px-0 space-y-5">
                     <div className=' flex space-x-5 items-center'>
                         <div className='md:w-1/2'>
@@ -241,98 +241,28 @@ export default function Home({projects}: IHomeProps) {
                     <div className="max-w-7xl  mx-auto">
                     {/* Grid */}
                     <div className="grid lg:grid-cols-2 lg:gap-y-16 gap-10">
-                        {/* Card */}
-                        <a className="group rounded-xl overflow-hidden" href="#">
-                        <div className="sm:flex">
-                            <div className="flex-shrink-0 relative rounded-xl overflow-hidden w-full sm:w-56 h-44">
-                            <img className="group-hover:scale-105 transition-transform duration-500 ease-in-out w-full h-full absolute top-0 left-0 object-cover rounded-xl" src="https://images.unsplash.com/photo-1540575861501-7cf05a4b125a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" alt="Image Description" />
+                        <a className="group overflow-hidden" href="#">
+                            <div className="sm:flex">
+                                <div className="flex-shrink-0 relative overflow-hidden w-full sm:w-56 h-44">
+                                    <img className="group-hover:scale-105 transition-transform duration-500 ease-in-out w-full h-full absolute top-0 left-0 object-cover rounded-xl" src="https://images.unsplash.com/photo-1540575861501-7cf05a4b125a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" alt="Image Description" />
+                                </div>
+                                <div className="mt-4 sm:mt-0 sm:ml-6 px-4 sm:px-0">
+                                <h3 className="text-lg font-semibold text-gray-800 group-hover:text-gray-600 dark:text-gray-300 dark:group-hover:text-white">
+                                    Studio by Preline
+                                </h3>
+                                <p className="mt-3 text-gray-600 dark:text-gray-400">
+                                    Produce professional, reliable streams easily leveraging Preline's innovative broadcast studio
+                                </p>
+                                <p className="mt-4 inline-flex items-center gap-x-1.5 text-purple-600 decoration-2 hover:underline font-medium">
+                                    Read more
+                                    <svg className="w-2.5 h-2.5" width={16} height={16} viewBox="0 0 16 16" fill="none">
+                                    <path d="M5.27921 2L10.9257 7.64645C11.1209 7.84171 11.1209 8.15829 10.9257 8.35355L5.27921 14" stroke="currentColor" strokeWidth={2} strokeLinecap="round" />
+                                    </svg>
+                                </p>
+                                </div>
                             </div>
-                            <div className="mt-4 sm:mt-0 sm:ml-6 px-4 sm:px-0">
-                            <h3 className="text-xl font-semibold text-gray-800 group-hover:text-gray-600 dark:text-gray-300 dark:group-hover:text-white">
-                                Studio by Preline
-                            </h3>
-                            <p className="mt-3 text-gray-600 dark:text-gray-400">
-                                Produce professional, reliable streams easily leveraging Preline's innovative broadcast studio
-                            </p>
-                            <p className="mt-4 inline-flex items-center gap-x-1.5 text-blue-600 decoration-2 hover:underline font-medium">
-                                Read more
-                                <svg className="w-2.5 h-2.5" width={16} height={16} viewBox="0 0 16 16" fill="none">
-                                <path d="M5.27921 2L10.9257 7.64645C11.1209 7.84171 11.1209 8.15829 10.9257 8.35355L5.27921 14" stroke="currentColor" strokeWidth={2} strokeLinecap="round" />
-                                </svg>
-                            </p>
-                            </div>
-                        </div>
                         </a>
-                        {/* End Card */}
-                        {/* Card */}
-                        <a className="group rounded-xl overflow-hidden" href="#">
-                        <div className="sm:flex">
-                            <div className="flex-shrink-0 relative rounded-xl overflow-hidden w-full sm:w-56 h-44">
-                            <img className="group-hover:scale-105 transition-transform duration-500 ease-in-out w-full h-full absolute top-0 left-0 object-cover rounded-xl" src="https://images.unsplash.com/photo-1668906093328-99601a1aa584?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=986&q=80" alt="Image Description" />
-                            </div>
-                            <div className="mt-4 sm:mt-0 sm:ml-6 px-4 sm:px-0">
-                            <h3 className="text-xl font-semibold text-gray-800 group-hover:text-gray-600 dark:text-gray-300 dark:group-hover:text-white">
-                                Onsite
-                            </h3>
-                            <p className="mt-3 text-gray-600 dark:text-gray-400">
-                                Optimize your in-person experience with best-in-class capabilities like badge printing and lead retrieval
-                            </p>
-                            <p className="mt-4 inline-flex items-center gap-x-1.5 text-blue-600 decoration-2 hover:underline font-medium">
-                                Read more
-                                <svg className="w-2.5 h-2.5" width={16} height={16} viewBox="0 0 16 16" fill="none">
-                                <path d="M5.27921 2L10.9257 7.64645C11.1209 7.84171 11.1209 8.15829 10.9257 8.35355L5.27921 14" stroke="currentColor" strokeWidth={2} strokeLinecap="round" />
-                                </svg>
-                            </p>
-                            </div>
-                        </div>
-                        </a>
-                        {/* End Card */}
-                        {/* Card */}
-                        <a className="group rounded-xl overflow-hidden" href="#">
-                        <div className="sm:flex">
-                            <div className="flex-shrink-0 relative rounded-xl overflow-hidden w-full sm:w-56 h-44">
-                            <img className="group-hover:scale-105 transition-transform duration-500 ease-in-out w-full h-full absolute top-0 left-0 object-cover rounded-xl" src="https://images.unsplash.com/photo-1567016526105-22da7c13161a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80" alt="Image Description" />
-                            </div>
-                            <div className="mt-4 sm:mt-0 sm:ml-6 px-4 sm:px-0">
-                            <h3 className="text-xl font-semibold text-gray-800 group-hover:text-gray-600 dark:text-gray-300 dark:group-hover:text-white">
-                                The complete guide to OKRs
-                            </h3>
-                            <p className="mt-3 text-gray-600 dark:text-gray-400">
-                                How to make objectives and key results work for your company
-                            </p>
-                            <p className="mt-4 inline-flex items-center gap-x-1.5 text-blue-600 decoration-2 hover:underline font-medium">
-                                Read more
-                                <svg className="w-2.5 h-2.5" width={16} height={16} viewBox="0 0 16 16" fill="none">
-                                <path d="M5.27921 2L10.9257 7.64645C11.1209 7.84171 11.1209 8.15829 10.9257 8.35355L5.27921 14" stroke="currentColor" strokeWidth={2} strokeLinecap="round" />
-                                </svg>
-                            </p>
-                            </div>
-                        </div>
-                        </a>
-                        {/* End Card */}
-                        {/* Card */}
-                        <a className="group rounded-xl overflow-hidden" href="#">
-                        <div className="sm:flex">
-                            <div className="flex-shrink-0 relative rounded-xl overflow-hidden w-full sm:w-56 h-44">
-                            <img className="group-hover:scale-105 transition-transform duration-500 ease-in-out w-full h-full absolute top-0 left-0 object-cover rounded-xl" src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" alt="Image Description" />
-                            </div>
-                            <div className="mt-4 sm:mt-0 sm:ml-6 px-4 sm:px-0">
-                            <h3 className="text-xl font-semibold text-gray-800 group-hover:text-gray-600 dark:text-gray-300 dark:group-hover:text-white">
-                                People program models
-                            </h3>
-                            <p className="mt-3 text-gray-600 dark:text-gray-400">
-                                Six approaches to bringing your People strategy to life
-                            </p>
-                            <p className="mt-4 inline-flex items-center gap-x-1.5 text-blue-600 decoration-2 hover:underline font-medium">
-                                Read more
-                                <svg className="w-2.5 h-2.5" width={16} height={16} viewBox="0 0 16 16" fill="none">
-                                <path d="M5.27921 2L10.9257 7.64645C11.1209 7.84171 11.1209 8.15829 10.9257 8.35355L5.27921 14" stroke="currentColor" strokeWidth={2} strokeLinecap="round" />
-                                </svg>
-                            </p>
-                            </div>
-                        </div>
-                        </a>
-                        {/* End Card */}
+
                     </div>
                     {/* End Grid */}
                     </div>
@@ -347,58 +277,73 @@ export default function Home({projects}: IHomeProps) {
             </section>
 
 
-            <div className='py-20 '>
+            <div className='pt-10 md:py-20 '>
                 <div className='text-center '>
-                    <p className='text-xl  md:text-3xl'>Thank you for checking out my work </p>
+                    <p className='text-3xl  md:text-5xl font-medium'>Hi there! 👋</p>
+                    <p className='text-xl  md:text-3xl mt-3 text-gray-500'>Thank you for checking out my work </p>
                 </div>
-                <div className='space-y-5 my-10 text-center'>
-                    <Button className='inline-flex  mx-auto items-center'>
-                        {/* <EnvelopeIcon className='w-8' /> */}
-                        <p className='text-xl md:text-2xl lowercase'>utyemma@gmail.com</p>
-                    </Button>
+
+                <div className='my-20 md:flex justify-center space-y-5 md:space-y-0 md:gap-x-10'>
+                    <div className='text-center'>
+                        {/* <EnvelopeIcon className='w-8 mx-auto' /> */}
+                        <Button className='inline-flex  mx-auto items-center'>
+                            <p className='text-xl md:text-2xl lowercase'>utyemma@gmail.com</p>
+                        </Button>
+                    </div>
+                    <div className='text-center'>
+                        {/* <PhoneIcon className='w-8 mx-auto' /> */}
+                        <Button className='inline-flex  mx-auto items-center'>
+                            <p className='text-xl md:text-2xl lowercase'>+234 903 870 5881</p>
+                        </Button>
+                    </div>
+                </div>
+                
+                <div className="text-center mb-5 md:mt-10">
+                    <h4 className='text-xl md:text-3xl'>Lets connect on Social Media</h4>
+                </div>
+
+                <div className='flex justify-center md:justify-between gap-x-4 items-center w-full'>
+                    <hr className='w-1/4 border-gray-400 hidden md:block' />
+                    <div className='space-x-5 flex flex-1 justify-center items-center'>
+                        <Link href="" className='transition-all duration-500 flex items-center  gap-x-2  hover:-translate-y-2'>
+                            <LinkedIn size={30} fill="#fafafa" /> <span className='hidden md:block'>LinkedIn</span>
+                        </Link>
+                        <hr className='w-3 hidden md:block border-gray-400' />
+                        <Link href="" className='transition-all duration-500 flex items-center gap-x-2  hover:-translate-y-2'>
+                            <Twitter size={30} fill="#fafafa" /> <span className='hidden md:block'>Twitter</span>
+                        </Link>
+                        <hr className='w-3 hidden md:block border-gray-400' />
+                        <Link href="" className='transition-all duration-500 flex items-center gap-x-2 hover:-translate-y-2'>
+                            <Github size={30} fill="#fafafa" /> <span className='hidden md:block'>Github</span>
+                        </Link>
+                        <hr className='w-3 hidden md:block border-gray-400' />
+                        <Link href="" className='transition-all duration-500 flex items-center gap-x-2  hover:-translate-y-2'>
+                            <Facebook size={30} fill="#fafafa" /> <span className='hidden md:block'>Facebook</span>
+                        </Link>
+                        <hr className='w-3 hidden md:block border-gray-400' />
+                        <Link href="" className='transition-all duration-500 flex items-center gap-x-2 hover:-translate-y-2'>
+                            <Instagram size={30} fill="#fafafa" /> <span className='hidden md:block'>Instagram</span>
+                        </Link>
+                        <hr className='w-3 hidden md:block border-gray-400' />
+                        <Link href="" className='transition-all duration-500 flex items-center gap-x-2 hover:-translate-y-2'>
+                            <Whatsapp size={30} fill="#fafafa" /> <span className='hidden md:block'>WhatsApp</span>
+                        </Link>
+                        {/* <hr className='w-3 hidden md:block' /> */}
+                    </div>
+
+                    <hr className='w-1/4 border-gray-400 hidden md:block' />
                 </div>
             </div>
 
-            <section id='contact' className='bg-purple-50'>
-                <div className="max-w-7xl mx-auto py-10 px-5 md:px-0">
+            <section id='contact' className=''>
+                <div className="max-w-7xl mx-auto pb-10 px-5 md:px-0">
                 
                     <div className="space-y-6">
 
-                        <div className='flex justify-center md:justify-between gap-x-4 items-center w-full'>
-                            <hr className='w-1/4 border-gray-400 hidden md:block' />
-                            <div className='space-x-5 flex flex-1 justify-center items-center'>
-                                <Link href="" className='transition-all duration-500 flex items-center  gap-x-2  hover:-translate-y-2'>
-                                    <LinkedIn size={30} fill="#fafafa" /> <span className='hidden md:block'>LinkedIn</span>
-                                </Link>
-                                <hr className='w-3 hidden md:block border-gray-400' />
-                                <Link href="" className='transition-all duration-500 flex items-center gap-x-2  hover:-translate-y-2'>
-                                    <Twitter size={30} fill="#fafafa" /> <span className='hidden md:block'>Twitter</span>
-                                </Link>
-                                <hr className='w-3 hidden md:block border-gray-400' />
-                                <Link href="" className='transition-all duration-500 flex items-center gap-x-2 hover:-translate-y-2'>
-                                    <Github size={30} fill="#fafafa" /> <span className='hidden md:block'>Github</span>
-                                </Link>
-                                <hr className='w-3 hidden md:block border-gray-400' />
-                                <Link href="" className='transition-all duration-500 flex items-center gap-x-2  hover:-translate-y-2'>
-                                    <Facebook size={30} fill="#fafafa" /> <span className='hidden md:block'>Facebook</span>
-                                </Link>
-                                <hr className='w-3 hidden md:block border-gray-400' />
-                                <Link href="" className='transition-all duration-500 flex items-center gap-x-2 hover:-translate-y-2'>
-                                    <Instagram size={30} fill="#fafafa" /> <span className='hidden md:block'>Instagram</span>
-                                </Link>
-                                <hr className='w-3 hidden md:block border-gray-400' />
-                                <Link href="" className='transition-all duration-500 flex items-center gap-x-2 hover:-translate-y-2'>
-                                    <Whatsapp size={30} fill="#fafafa" /> <span className='hidden md:block'>WhatsApp</span>
-                                </Link>
-                                {/* <hr className='w-3 hidden md:block' /> */}
-                            </div>
-
-                            <hr className='w-1/4 border-gray-400 hidden md:block' />
-                            </div>
                     </div>
 
                 </div>
-                <div className="border-t ">
+                <div className="border-t bg-purple-50 ">
                     <Footer />  
                 </div>
             </section>

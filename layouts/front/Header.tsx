@@ -28,9 +28,9 @@ export const Header = ({title} : IHeader) => {
 
             <nav ref={parent as any} className='py-6 max-w-7xl mx-auto  z-50'>
                 <div className='flex justify-between items-center px-5 md:px-0'>
-                    <Link href={'/'} className='uppercase flex space-x-1 items-center '>
-                        <CommandLineIcon className='w-8' />
-                        <span className='text-xl font-bold tracking-wide'>UtyEmma.</span>
+                    <Link href={'/'} className='uppercase flex bg-clip-text bg-gradient-to-r from-purple-900 to-purple-500 text-transparent  space-x-1 items-center '>
+                        <CommandLineIcon className='w-8 text-purple-700' />
+                        <span className='text-2xl font-medium  tracking-wide'>UtyEmma.</span>
                     </Link>   
 
                     <div className='flex space-x-4'>
