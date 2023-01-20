@@ -23,7 +23,7 @@ import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import Typewriter from 'typewriter-effect';
-import { SkillBlock } from './partials/SkillBlock'
+import SkillBlock  from './partials/SkillBlock'
 import { Element } from 'react-scroll'
 import { useTheme } from 'next-themes'
 

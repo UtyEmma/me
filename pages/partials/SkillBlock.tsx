@@ -6,7 +6,7 @@ interface ISkillBlockProps {
     title: string
 }
 
-export const SkillBlock = ({img, title}: ISkillBlockProps) => {
+const SkillBlock = ({img, title}: ISkillBlockProps) => {
     const {theme} = useTheme()
 
     return (
@@ -16,3 +16,5 @@ export const SkillBlock = ({img, title}: ISkillBlockProps) => {
         </div>
     )
 }
+
+export default SkillBlock
