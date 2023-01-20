@@ -32,7 +32,7 @@ interface IHomeProps {
     projects: IProject[]
 }
 
-export default function Home({projects}: IHomeProps) {
+export default function Home() {
 
     const settings = {
         dots: true,
@@ -207,7 +207,7 @@ export default function Home({projects}: IHomeProps) {
                 </div>
             </section>
 
-            <Element name='projects' className='md:px-5 px-3'>
+            {/* <Element name='projects' className='md:px-5 px-3'>
                 <div className="max-w-7xl mx-auto px-5 py-10 md:px-0 space-y-5">
                     <div className=' flex space-x-5 items-center'>
                         <div className='md:w-1/2'>
@@ -238,7 +238,7 @@ export default function Home({projects}: IHomeProps) {
                         </Link>
                     </div>
                 </div>
-            </Element>
+            </Element> */}
 
             <section id='blog' className={`${theme == 'dark' ? 'bg-zinc-900' : 'bg-purple-50'} md:px-5 px-3`}>
                 <div className="max-w-7xl mx-auto px-5 py-20 md:px-0 space-y-5">
@@ -354,18 +354,18 @@ export default function Home({projects}: IHomeProps) {
         </FrontLayout>
     )
 }
-export async function getServerSideProps() {
-    const res = await fetch(`http://localhost:3000/api/projects/fetch`, {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-        },
-    })
+// export async function getServerSideProps() {
+//     const res = await fetch(`http://localhost:3000/api/projects/fetch`, {
+//         method: 'GET',
+//         headers: {
+//             'Content-Type': 'application/json',
+//             'Accept': 'application/json'
+//         },
+//     })
 
-    const projects = (await res.json()).projects
+//     const projects = (await res.json()).projects
   
-    // Pass data to the page via props
-    return { props: { projects } }
-}
+//     // Pass data to the page via props
+//     return { props: { projects } }
+// }
 
