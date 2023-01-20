@@ -79,7 +79,7 @@ export const Header = ({title} : IHeader) => {
             </Head>
 
             <nav ref={parent as any} className='py-6 max-w-7xl mx-auto  z-50'>
-                <div className='flex justify-between items-center px-5'>
+                <div className='flex justify-between items-center md:px-0 px-4'>
                     <Link href={'/'} className='flex bg-clip-text bg-gradient-to-r from-purple-900 to-purple-600 text-transparent  space-x-1 items-center '>
                         <CommandLineIcon className='w-8 text-purple-800' />
                         <span className='text-2xl font-semibold'>UtyEmma.</span>

@@ -32,7 +32,7 @@ interface IHomeProps {
     projects: IProject[]
 }
 
-export default function Home() {
+export default function Home({projects}: IHomeProps) {
 
     const settings = {
         dots: true,
@@ -66,7 +66,7 @@ export default function Home() {
         <FrontLayout title='Utibe-Abasi Emmanuel'>
             <Header title={"Utibe-Abasi Emmanuel"} />
 
-            <div className='relative md:px-5 px-3'>
+            <div className='relative'>
                 <div className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]">
                     <svg className="relative left-[calc(50%-11rem)] -z-10 h-[21.1875rem] max-w-none -translate-x-1/2 rotate-[30deg] sm:left-[calc(50%-30rem)] sm:h-[42.375rem]" viewBox="0 0 1155 678" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill="url(#45de2b6b-92d5-4d68-a6a0-9b9b2abad533)" fillOpacity=".3" d="M317.219 518.975L203.852 678 0 438.341l317.219 80.634 204.172-286.402c1.307 132.337 45.083 346.658 209.733 145.248C936.936 126.058 882.053-94.234 1031.02 41.331c119.18 108.451 130.68 295.337 121.53 375.223L855 299l21.173 362.054-558.954-142.079z" />
@@ -158,7 +158,7 @@ export default function Home() {
                 </div>
             </div>
 
-            <section id='about' className={`${theme == 'dark' ? 'bg-zinc-900' : 'bg-purple-50'} md:px-5 px-3`}>
+            <section id='about' className={`${theme == 'dark' ? 'bg-zinc-900' : 'bg-purple-50'}`}>
                 <div className="max-w-7xl mx-auto px-5 py-20 md:px-0 space-y-5">
                     <div className=' flex space-x-5 items-center'>
                         <div className='md:w-1/2'>
@@ -207,7 +207,7 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* <Element name='projects' className='md:px-5 px-3'>
+            <Element name='projects' className=''>
                 <div className="max-w-7xl mx-auto px-5 py-10 md:px-0 space-y-5">
                     <div className=' flex space-x-5 items-center'>
                         <div className='md:w-1/2'>
@@ -238,9 +238,9 @@ export default function Home() {
                         </Link>
                     </div>
                 </div>
-            </Element> */}
+            </Element>
 
-            <section id='blog' className={`${theme == 'dark' ? 'bg-zinc-900' : 'bg-purple-50'} md:px-5 px-3`}>
+            <section id='blog' className={`${theme == 'dark' ? 'bg-zinc-900' : 'bg-purple-50'}`}>
                 <div className="max-w-7xl mx-auto px-5 py-20 md:px-0 space-y-5">
                     <div className=' flex space-x-5 items-center'>
                         <div className='md:w-1/2'>
@@ -290,7 +290,7 @@ export default function Home() {
             </section>
 
 
-            <div className='pt-10 md:py-20 md:px-0 px-3'>
+            <div className='pt-10 md:py-20'>
                 <div className='text-center '>
                     <p className='text-3xl  md:text-5xl font-medium'>Hi there! 👋</p>
                     <p className='text-xl  md:text-3xl mt-3 text-gray-500'>Thank you for checking out my work </p>
@@ -354,18 +354,18 @@ export default function Home() {
         </FrontLayout>
     )
 }
-// export async function getServerSideProps() {
-//     const res = await fetch(`http://localhost:3000/api/projects/fetch`, {
-//         method: 'GET',
-//         headers: {
-//             'Content-Type': 'application/json',
-//             'Accept': 'application/json'
-//         },
-//     })
+export async function getServerSideProps() {
+    const res = await fetch(`http://localhost:3000/api/projects/fetch`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+    })
 
-//     const projects = (await res.json()).projects
+    const projects = (await res.json()).projects
   
-//     // Pass data to the page via props
-//     return { props: { projects } }
-// }
+    // Pass data to the page via props
+    return { props: { projects } }
+}
 
