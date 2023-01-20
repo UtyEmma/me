@@ -12,13 +12,16 @@ const Table = ({className, children, ...props} : ITable) => {
     )
 }
 
-Table.Row = ({children, className, ...props} : HTMLAttributes<HTMLTableRowElement>) => <tr className={`text-gray-700 dark:text-gray-400 ${className}`} {...props} >{children}</tr>
+const Row = ({children, className, ...props} : HTMLAttributes<HTMLTableRowElement>) => <tr className={`text-gray-700 dark:text-gray-400 ${className}`} {...props} >{children}</tr>
 
 interface ITableCell extends HTMLAttributes<HTMLTableCellElement>{
     as?: React.ElementType
 }
 
-Table.Cell = ({children, as: Element = 'td', className, ...props} : ITableCell) => <Element className={`px-4 py-3 ${className}`} {...props}>{children}</Element>
+const Cell = ({children, as: Element = 'td', className, ...props} : ITableCell) => <Element className={`px-4 py-3 ${className}`} {...props}>{children}</Element>
+
+Table.Row = Row
+Table.Cell = Cell
 
 export default Table
 

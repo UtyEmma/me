@@ -257,22 +257,19 @@ export default function Home({projects}: IHomeProps) {
                             <div className="sm:flex">
                                 <div className="flex-shrink-0 relative overflow-hidden w-full sm:w-56 h-44">
                                     <Link href={''}>
-                                        <img className="group-hover:scale-105 transition-transform duration-500 ease-in-out w-full h-full absolute top-0 left-0 object-cover rounded-xl" src="https://images.unsplash.com/photo-1540575861501-7cf05a4b125a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" alt="Image Description" />
+                                        <img className="group-hover:scale-105 transition-transform duration-500 ease-in-out w-full h-full absolute top-0 left-0 object-cover rounded-xl" src="https://images.unsplash.com/photo-1540575861501-7cf05a4b125a" alt="Image Description" />
                                     </Link>
                                 </div>
                                 <div className="mt-4 sm:mt-0 sm:ml-6 py-2 px-0">
                                     {/* <p className="mt-2 text-gray-600 dark:text-gray-400 text-sm">Web Development</p> */}
                                     <Link href={''} >
-                                        <h3 className="text-lg font-semibold text-gray-800 group-hover:text-gray-600 dark:text-gray-300 dark:group-hover:text-white">
-                                            How to get started in Web Development                                        </h3>
+                                        <h3 className="text-lg font-semibold text-gray-800 group-hover:text-gray-600 dark:text-gray-300 dark:group-hover:text-white">How to get started in Web Development</h3>
                                     </Link>
-                                    <p className="mt-2 text-gray-600 dark:text-gray-400">
-                                        Produce professional, reliable streams easily leveraging Preline's innovative broadcast studio
-                                    </p>
+                                    <p className="mt-2 text-gray-600 dark:text-gray-400">Produce professional, reliable streams easily leveraging Preline&apos;s innovative broadcast studio</p>
                                     <p className="mt-3 inline-flex items-center gap-x-1.5 text-purple-600 decoration-2 hover:underline font-medium">
                                         Read more
                                         <svg className="w-2.5 h-2.5" width={16} height={16} viewBox="0 0 16 16" fill="none">
-                                        <path d="M5.27921 2L10.9257 7.64645C11.1209 7.84171 11.1209 8.15829 10.9257 8.35355L5.27921 14" stroke="currentColor" strokeWidth={2} strokeLinecap="round" />
+                                            <path d="M5.27921 2L10.9257 7.64645C11.1209 7.84171 11.1209 8.15829 10.9257 8.35355L5.27921 14" stroke="currentColor" strokeWidth={2} strokeLinecap="round" />
                                         </svg>
                                     </p>
                                 </div>

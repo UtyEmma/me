@@ -37,7 +37,7 @@ export default function Projects({projects}: IProjectsProps) {
                     <tbody className='divide-y'>
                         {
                             projects.map(project => (
-                                <Table.Row>
+                                <Table.Row key={project._id}>
                                     <Table.Cell>{project.title}</Table.Cell>
                                     <Table.Cell>{project.views}</Table.Cell>
                                     <Table.Cell>{project.clicks}</Table.Cell>
