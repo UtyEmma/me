@@ -24,6 +24,8 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import Typewriter from 'typewriter-effect';
 import { SkillBlock } from './partials/SkillBlock'
+import { Element } from 'react-scroll'
+import { useTheme } from 'next-themes'
 
 
 interface IHomeProps {
@@ -58,10 +60,13 @@ export default function Home({projects}: IHomeProps) {
     
     };
 
+    const { theme, setTheme } = useTheme()
+
     return (
         <FrontLayout title='Utibe-Abasi Emmanuel'>
-            <div className='relative'>
-                <Header title={"Utibe-Abasi Emmanuel"} />
+            <Header title={"Utibe-Abasi Emmanuel"} />
+
+            <div className='relative md:px-5 px-3'>
                 <div className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]">
                     <svg className="relative left-[calc(50%-11rem)] -z-10 h-[21.1875rem] max-w-none -translate-x-1/2 rotate-[30deg] sm:left-[calc(50%-30rem)] sm:h-[42.375rem]" viewBox="0 0 1155 678" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill="url(#45de2b6b-92d5-4d68-a6a0-9b9b2abad533)" fillOpacity=".3" d="M317.219 518.975L203.852 678 0 438.341l317.219 80.634 204.172-286.402c1.307 132.337 45.083 346.658 209.733 145.248C936.936 126.058 882.053-94.234 1031.02 41.331c119.18 108.451 130.68 295.337 121.53 375.223L855 299l21.173 362.054-558.954-142.079z" />
@@ -77,8 +82,8 @@ export default function Home({projects}: IHomeProps) {
                 <div className="max-w-7xl mx-auto pb-10 pt-10 md:pt-24 px-5 md:px-0 relative">
                     <div className="md:flex items-center">
                         <div className='md:w-1/2' >
-                            <p className='md:text-2xl tracking-wide text-xl px-1 mb-2 bg-clip-text bg-gradient-to-r from-purple-800 to-purple-500 text-transparent '><span className='text-purple-500'>👋</span> Hi there, I am</p>
-                            <h1 className='md:text-5xl font-medium text-4xl  px-0 mb-2  tracking-wide'>Utibe-Abasi  Emmanuel</h1>
+                            <p className='md:text-2xl text-xl px-1 mb-2 bg-clip-text bg-gradient-to-r from-purple-800 to-purple-500 text-transparent '>Hi there, I am</p>
+                            <h1 className='md:text-5xl uppercase font-semibold text-5xl  px-0 mb-2  '>Utibe-Abasi  Emmanuel</h1>
                             <div className='uppercase tracking-wide text-xl md:text-2xl text-gray-500  flex gap-x-1'>
                                 <Typewriter
                                     options={{
@@ -91,7 +96,7 @@ export default function Home({projects}: IHomeProps) {
 
                             <div className="grid  mt-10">
                                 <div className='md:col-span-3'>
-                                    <p className='text-2xl md:text-3xl font-extralight'>I am a <span className='italic text-purple-600 font-medium'>highly skilled Full Stack Web Developer</span> based in Nigeria. I am interested in <span className='italic font-medium'>building tech-driven solutions</span> that will create a better future for Humanity!</p>
+                                    <p className='text-2xl md:text-3xl'>I am a <span className='font-medium'>highly skilled Full Stack Web Developer</span> based in Nigeria. I am interested in <span className='italic font-medium'>building tech-driven solutions</span> that will create a better future for Humanity!</p>
                                 </div>
                             </div>
 
@@ -124,26 +129,26 @@ export default function Home({projects}: IHomeProps) {
 
                         <div className="md:absolute md:bottom-0 md:right-0 " >
                             <div className='flex md:flex-col items-center gap-5 md:gap-5'>
-                                <div  className='border w-10 border-gray-500  md:hidden'></div>
-                                <Link href={''} className="text-gray-500 hover:text-purple-700">
-                                    <Facebook size={25} />
+                                <div  className={`border w-10  md:hidden ${theme === 'dark' ? 'border-white' : 'border-gray-500'}`}></div>
+                                <Link href={''} className={`${theme == 'dark' ? 'text-white' : "text-purple-600"} hover:text-purple-700 transition-all duration-300`}>
+                                    <Facebook size={30} />
                                 </Link>
-                                <Link href={''} className="text-gray-500 hover:text-purple-700">
-                                    <Twitter size={25} />
+                                <Link href={''} className={`${theme == 'dark' ? 'text-white' : "text-purple-600"} hover:text-purple-700 transition-all duration-300`}>
+                                    <Twitter size={30} />
                                 </Link>
-                                <Link href={''} className="text-gray-500 hover:text-purple-700">
-                                    <Instagram size={25} />
+                                <Link href={''} className={`${theme == 'dark' ? 'text-white' : "text-purple-600"} hover:text-purple-700 transition-all duration-300`}>
+                                    <Instagram size={30} />
                                 </Link>
-                                <Link href={''} className="text-gray-500 hover:text-purple-700">
-                                    <LinkedIn size={25} />
+                                <Link href={''} className={`${theme == 'dark' ? 'text-white' : "text-purple-600"} hover:text-purple-700 transition-all duration-300`}>
+                                    <LinkedIn size={30} />
                                 </Link>
-                                <Link href={''} className="text-gray-500 hover:text-purple-700">
-                                    <Github size={25} fill="#00000" />
+                                <Link href={''} className={`${theme == 'dark' ? 'text-white' : "text-purple-600"} hover:text-purple-700 transition-all duration-300`}>
+                                    <Github size={30} fill="#00000" />
                                 </Link>
-                                <Link href={''} className="text-gray-500 hover:text-purple-700">
-                                    <Whatsapp size={25} />
+                                <Link href={''} className={`${theme == 'dark' ? 'text-white' : "text-purple-600"} hover:text-purple-700 transition-all duration-300`}>
+                                    <Whatsapp size={30} />
                                 </Link>
-                                <div style={{width: '1px'}} className='bg-black h-20 md:block hidden border-left'></div>
+                                <div style={{width: '2px'}} className={`${theme == 'dark' ? 'bg-white' : "bg-purple-600"} h-20 md:block hidden border-left`}></div>
                             </div>
                         </div>
                     </div>
@@ -153,7 +158,7 @@ export default function Home({projects}: IHomeProps) {
                 </div>
             </div>
 
-            <section id='about' className='bg-gradient-to-b from-purple-50 to-white'>
+            <section id='about' className={`${theme == 'dark' ? 'bg-zinc-900' : 'bg-purple-50'} md:px-5 px-3`}>
                 <div className="max-w-7xl mx-auto px-5 py-20 md:px-0 space-y-5">
                     <div className=' flex space-x-5 items-center'>
                         <div className='md:w-1/2'>
@@ -165,6 +170,10 @@ export default function Home({projects}: IHomeProps) {
 
                     <div className='md:flex gap-10'>
                         <div className='md:w-1/2 '>
+                            <div className='flex items-center mb-3'>
+                                <hr className='w-1/12 ' />
+                                <p className='text-xl  ml-3 uppercase '>Skills</p>
+                            </div>
                             <div className='flex justify-start flex-wrap gap-3'>
                                 <SkillBlock img='/images/social/javascript.svg' title='Javascript' />
                                 <SkillBlock img='/images/social/reactjs.svg' title='React JS' />
@@ -177,9 +186,16 @@ export default function Home({projects}: IHomeProps) {
                                 <SkillBlock img='/images/social/mysql.svg' title='MySQL' />
                             </div>
                         </div>
-                        <div className='md:w-1/2 w-full mt-6 md:mt-0 space-y-6'>
-                            <ExperienceItem />
-                            <ExperienceItem />
+                        <div className='md:w-1/2 w-full mt-6 md:mt-0'>
+                            <div className='flex items-center mb-3'>
+                                <hr className='w-1/12' />
+                                <p className='text-xl ml-3 uppercase'>Experience</p>
+                            </div>
+
+                            <div className='space-y-6'>
+                                <ExperienceItem />
+                                <ExperienceItem />
+                            </div>
 
                             <div className="mt-10">
                                 <Link href={''} >
@@ -188,15 +204,11 @@ export default function Home({projects}: IHomeProps) {
                             </div>
                         </div>
                     </div>
-
-                    <div className="">
-                    </div>
-
                 </div>
             </section>
 
-            <section id='projects' className=''>
-                <div className="max-w-7xl mx-auto px-5 py-20 md:px-0 space-y-5">
+            <Element name='projects' className='md:px-5 px-3'>
+                <div className="max-w-7xl mx-auto px-5 py-10 md:px-0 space-y-5">
                     <div className=' flex space-x-5 items-center'>
                         <div className='md:w-1/2'>
                             <p className='text-2xl md:text-3xl  mb-0 uppercase font-semibold bg-clip-text bg-gradient-to-r from-purple-800 to-purple-400 text-transparent'>02. Portfolio</p>
@@ -205,7 +217,7 @@ export default function Home({projects}: IHomeProps) {
                         <hr className='border-black flex-1 hidden md:block' />
                     </div>
                 
-                    {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-4"> */}
+                    <div>
                         <Slider {...settings}  >
                             {
                                 projects.map(project => (
@@ -215,9 +227,9 @@ export default function Home({projects}: IHomeProps) {
                                 ))
                             }
                         </Slider>
-                    {/* </div> */}
+                    </div>
 
-                    <div className="space-x-5">
+                    <div className="space-x-5 pt-10">
                         <Link href={''} >
                             <Button className='bg-transparent border-black text-black hover:text-white hover:bg-black'>My Projects</Button> 
                         </Link>
@@ -226,9 +238,9 @@ export default function Home({projects}: IHomeProps) {
                         </Link>
                     </div>
                 </div>
-            </section>
+            </Element>
 
-            <section id='blog' className='bg-gradient-to-t from-gray-100 to-white'>
+            <section id='blog' className={`${theme == 'dark' ? 'bg-zinc-900' : 'bg-purple-50'} md:px-5 px-3`}>
                 <div className="max-w-7xl mx-auto px-5 py-20 md:px-0 space-y-5">
                     <div className=' flex space-x-5 items-center'>
                         <div className='md:w-1/2'>
@@ -241,27 +253,31 @@ export default function Home({projects}: IHomeProps) {
                     <div className="max-w-7xl  mx-auto">
                     {/* Grid */}
                     <div className="grid lg:grid-cols-2 lg:gap-y-16 gap-10">
-                        <a className="group overflow-hidden" href="#">
+                        <div className="group overflow-hidden rounded-xl" >
                             <div className="sm:flex">
                                 <div className="flex-shrink-0 relative overflow-hidden w-full sm:w-56 h-44">
-                                    <img className="group-hover:scale-105 transition-transform duration-500 ease-in-out w-full h-full absolute top-0 left-0 object-cover rounded-xl" src="https://images.unsplash.com/photo-1540575861501-7cf05a4b125a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" alt="Image Description" />
+                                    <Link href={''}>
+                                        <img className="group-hover:scale-105 transition-transform duration-500 ease-in-out w-full h-full absolute top-0 left-0 object-cover rounded-xl" src="https://images.unsplash.com/photo-1540575861501-7cf05a4b125a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" alt="Image Description" />
+                                    </Link>
                                 </div>
-                                <div className="mt-4 sm:mt-0 sm:ml-6 px-4 sm:px-0">
-                                <h3 className="text-lg font-semibold text-gray-800 group-hover:text-gray-600 dark:text-gray-300 dark:group-hover:text-white">
-                                    Studio by Preline
-                                </h3>
-                                <p className="mt-3 text-gray-600 dark:text-gray-400">
-                                    Produce professional, reliable streams easily leveraging Preline's innovative broadcast studio
-                                </p>
-                                <p className="mt-4 inline-flex items-center gap-x-1.5 text-purple-600 decoration-2 hover:underline font-medium">
-                                    Read more
-                                    <svg className="w-2.5 h-2.5" width={16} height={16} viewBox="0 0 16 16" fill="none">
-                                    <path d="M5.27921 2L10.9257 7.64645C11.1209 7.84171 11.1209 8.15829 10.9257 8.35355L5.27921 14" stroke="currentColor" strokeWidth={2} strokeLinecap="round" />
-                                    </svg>
-                                </p>
+                                <div className="mt-4 sm:mt-0 sm:ml-6 py-2 px-0">
+                                    {/* <p className="mt-2 text-gray-600 dark:text-gray-400 text-sm">Web Development</p> */}
+                                    <Link href={''} >
+                                        <h3 className="text-lg font-semibold text-gray-800 group-hover:text-gray-600 dark:text-gray-300 dark:group-hover:text-white">
+                                            How to get started in Web Development                                        </h3>
+                                    </Link>
+                                    <p className="mt-2 text-gray-600 dark:text-gray-400">
+                                        Produce professional, reliable streams easily leveraging Preline's innovative broadcast studio
+                                    </p>
+                                    <p className="mt-3 inline-flex items-center gap-x-1.5 text-purple-600 decoration-2 hover:underline font-medium">
+                                        Read more
+                                        <svg className="w-2.5 h-2.5" width={16} height={16} viewBox="0 0 16 16" fill="none">
+                                        <path d="M5.27921 2L10.9257 7.64645C11.1209 7.84171 11.1209 8.15829 10.9257 8.35355L5.27921 14" stroke="currentColor" strokeWidth={2} strokeLinecap="round" />
+                                        </svg>
+                                    </p>
                                 </div>
                             </div>
-                        </a>
+                        </div>
 
                     </div>
                     {/* End Grid */}
@@ -277,7 +293,7 @@ export default function Home({projects}: IHomeProps) {
             </section>
 
 
-            <div className='pt-10 md:py-20 '>
+            <div className='pt-10 md:py-20 md:px-0 px-3'>
                 <div className='text-center '>
                     <p className='text-3xl  md:text-5xl font-medium'>Hi there! 👋</p>
                     <p className='text-xl  md:text-3xl mt-3 text-gray-500'>Thank you for checking out my work </p>
@@ -302,9 +318,9 @@ export default function Home({projects}: IHomeProps) {
                     <h4 className='text-xl md:text-3xl'>Lets connect on Social Media</h4>
                 </div>
 
-                <div className='flex justify-center md:justify-between gap-x-4 items-center w-full'>
+                <div className='flex justify-center md:justify-between gap-x-4 items-center w-full mb-5'>
                     <hr className='w-1/4 border-gray-400 hidden md:block' />
-                    <div className='space-x-5 flex flex-1 justify-center items-center'>
+                    <div className='space-x-8 md:space-x-5 flex flex-1 justify-center items-center'>
                         <Link href="" className='transition-all duration-500 flex items-center  gap-x-2  hover:-translate-y-2'>
                             <LinkedIn size={30} fill="#fafafa" /> <span className='hidden md:block'>LinkedIn</span>
                         </Link>
@@ -335,22 +351,12 @@ export default function Home({projects}: IHomeProps) {
                 </div>
             </div>
 
-            <section id='contact' className=''>
-                <div className="max-w-7xl mx-auto pb-10 px-5 md:px-0">
-                
-                    <div className="space-y-6">
-
-                    </div>
-
-                </div>
-                <div className="border-t bg-purple-50 ">
-                    <Footer />  
-                </div>
+            <section>
+                <Footer />  
             </section>
         </FrontLayout>
     )
 }
-
 export async function getServerSideProps() {
     const res = await fetch(`http://localhost:3000/api/projects/fetch`, {
         method: 'GET',
