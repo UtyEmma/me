@@ -97,10 +97,10 @@ export const Header = ({title} : IHeader) => {
                                 <Link href={""}>Resume</Link>
                             </li>
                             <li className='hover:-translate-y-1 font-medium hover:font-semi-bold hover:text-purple-600 transition-all duration-300'>
-                                <Link href={""}>Blog</Link>
+                                <ScrollLink to="blog" className='cursor-pointer' offset={-50} duration={500} spy={true} hashSpy={true} activeClass="text-purple-600" smooth={true}>Blog</ScrollLink>
                             </li>
                             <li className='hover:-translate-y-1 font-medium hover:font-semi-bold hover:text-purple-600 transition-all duration-300'>
-                                <Link href={""}>Contact</Link>
+                                <ScrollLink to="contact" className='cursor-pointer' offset={-50} duration={500} spy={true} hashSpy={true} activeClass="text-purple-600" smooth={true}>Contact</ScrollLink>
                             </li>
                         </ul>
                         <button onClick={toggleTheme}>

@@ -147,7 +147,7 @@ export default function Home({projects}: IHomeProps) {
                 </div>
             </div>
 
-            <section id='about' className={`${theme == 'dark' ? 'bg-zinc-900' : 'bg-purple-50'}`}>
+            <Element name="about" id='about' className={`${theme == 'dark' ? 'bg-zinc-900' : 'bg-purple-50'}`}>
                 <div className="max-w-7xl mx-auto px-5 py-20 md:px-0 space-y-5">
                     <div className=' flex space-x-5 items-center'>
                         <div className='md:w-1/2'>
@@ -194,10 +194,10 @@ export default function Home({projects}: IHomeProps) {
                         </div>
                     </div>
                 </div>
-            </section>
+            </Element>
 
             <Element name='projects' className=''>
-                <div className="max-w-7xl mx-auto px-5 py-10 md:px-0 space-y-5">
+                <div className="max-w-7xl mx-auto px-5 py-20 md:px-0 space-y-5">
                     <div className=' flex space-x-5 items-center'>
                         <div className='md:w-1/2'>
                             <p className='text-2xl md:text-3xl  mb-0 uppercase font-semibold bg-clip-text bg-gradient-to-r from-purple-800 to-purple-400 text-transparent'>02. Portfolio</p>
@@ -229,7 +229,7 @@ export default function Home({projects}: IHomeProps) {
                 </div>
             </Element>
 
-            <section id='blog' className={`${theme == 'dark' ? 'bg-zinc-900' : 'bg-purple-50'}`}>
+            <Element name='blog' id='blog' className={`${theme == 'dark' ? 'bg-zinc-900' : 'bg-purple-50'}`}>
                 <div className="max-w-7xl mx-auto px-5 py-20 md:px-0 space-y-5">
                     <div className=' flex space-x-5 items-center'>
                         <div className='md:w-1/2'>
@@ -276,10 +276,10 @@ export default function Home({projects}: IHomeProps) {
                         </Link>
                     </div>
                 </div>
-            </section>
+            </Element>
 
 
-            <div className='pt-10 md:py-20'>
+            <Element name='contact' className='pt-10 md:py-20'>
                 <div className='text-center '>
                     <p className='text-3xl  md:text-5xl font-medium'>Hi there! 👋</p>
                     <p className='text-xl  md:text-3xl mt-3 text-gray-500'>Thank you for checking out my work </p>
@@ -335,7 +335,7 @@ export default function Home({projects}: IHomeProps) {
 
                     <hr className='w-1/4 border-gray-400 hidden md:block' />
                 </div>
-            </div>
+            </Element>
 
             <section>
                 <Footer />  
