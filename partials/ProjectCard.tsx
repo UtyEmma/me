@@ -17,7 +17,7 @@ export default function ProjectCard ({project}: IProjectCardProps) {
     return (
         <div className='group'>
             <div className={`aspect-video  ${theme == 'dark' ? 'bg-gray-500 bg-opacity-10' : 'bg-gray-100'} relative flex group overflow-hidden`}>
-                <div className="p-10">
+                <div className="p-6 md:p-10">
                     <img src={project.image} className="object-cover object-center drop-shadow-2xl min-w-full min-h-full group-hover:scale-105 transition-all duration-500" alt={project.title} />
                 </div>
             </div>
