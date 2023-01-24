@@ -5,8 +5,8 @@ import Link from 'next/link'
 import { useAutoAnimate } from '@formkit/auto-animate/react'
 import { useTheme } from 'next-themes'
 import { Link as ScrollLink, Element, Events, animateScroll as scroll, scrollSpy, scroller, animateScroll } from 'react-scroll'
-import { MediumLink, ResumeLink } from '../../pages/api/data/utils'
-import { Button } from '../../components/Buttons/Button'
+import { MediumLink, ResumeLink } from '../pages/api/data/utils'
+import { Button } from '../components/Buttons/Button'
 
 interface IHeader {
     title: string

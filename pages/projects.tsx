@@ -1,8 +1,8 @@
 import { useTheme } from 'next-themes'
 import React from 'react'
-import { Footer } from '../layouts/front/Footer'
-import { FrontLayout } from '../layouts/front/FrontLayout'
-import { Header } from '../layouts/front/Header'
+import { Footer } from '../layouts/Footer'
+import { FrontLayout } from '../layouts/FrontLayout'
+import { Header } from '../layouts/Header'
 import { ProjectCard } from './partials/ProjectCard'
 import { IProject } from '../types/projects'
 
