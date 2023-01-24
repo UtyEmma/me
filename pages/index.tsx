@@ -29,6 +29,9 @@ import HeroBg  from './partials/HeroBg'
 import { IPosts } from '../types/posts'
 import BlogPost  from './partials/BlogPost'
 import { ResumeLink } from './api/data/utils'
+import { useEffect, useState } from 'react'
+import { ProjectList } from './api/data/projects'
+import axios from 'axios'
 
 
 interface IHomeProps {
@@ -36,7 +39,7 @@ interface IHomeProps {
     posts: IPosts
 }
 
-export default function Home({projects, posts}: IHomeProps) {
+export default function Home() {
     
     const settings = {
         dots: true,
@@ -64,7 +67,23 @@ export default function Home({projects, posts}: IHomeProps) {
     
     };
 
+    const fetchPosts = async () => {
+        const url = "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@UtyEmma"
+    
+        const medium = await axios.get(url)
+    
+        const posts = medium.data    
+        setPosts(posts)
+    }
+
+    const [posts, setPosts] = useState<IPosts>()
+
+    const [projects, setProjects] = useState(ProjectList)
     const { theme, setTheme } = useTheme()
+
+    useEffect(() => {
+        fetchPosts()
+    }, [])
 
     return (
         <FrontLayout title='Utibe-Abasi Emmanuel'>
@@ -247,7 +266,7 @@ export default function Home({projects, posts}: IHomeProps) {
 
                     
                     <div className="mt-10 pt-10">
-                        <Link href={posts.feed.url} >
+                        <Link href={posts?.feed.url || ''} >
                             <Button className='bg-transparent border-black text-black hover:text-white hover:bg-black'>Visit My Blog</Button> 
                         </Link>
                     </div>
