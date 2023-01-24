@@ -2,7 +2,7 @@ import { useTheme } from 'next-themes'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import { IPostItem, IPosts } from '../../types/posts'
+import { IPostItem, IPosts } from '../types/posts'
 
 interface IBlogPost {
     post: IPostItem

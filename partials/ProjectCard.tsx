@@ -4,8 +4,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { text } from 'stream/consumers'
-import Github from '../../components/Icons/Github'
-import { IProject } from '../../types/projects'
+import Github from '../components/Icons/Github'
+import { IProject } from '../types/projects'
 
 interface IProjectCardProps {
     project: IProject
