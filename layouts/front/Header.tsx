@@ -90,7 +90,7 @@ export const Header = ({title} : IHeader) => {
                     <div className='flex space-x-4'>
                         <ul className='md:flex space-x-7 items-center font-medium text-md hidden'>
                             <li className='hover:-translate-y-1 font-medium hover:font-semi-bold hover:text-purple-600 transition-all duration-300'>
-                                <ScrollLink to="about" className='cursor-pointer' offset={-50} duration={500} spy={true} hashSpy={true} activeClass="text-purple-600" smooth={true}>Skills</ScrollLink>
+                                <Link href="/#about" className='cursor-pointer' >Skills</Link>
                             </li>
                             <li className='hover:-translate-y-1 font-medium hover:font-semi-bold hover:text-purple-600 transition-all duration-300'>
                                 <Link href="/projects"  className={`cursor-pointer`} >Projects</Link>

@@ -28,9 +28,7 @@ export default function Projects({projects}: IProjects) {
                 <div className='grid md:grid-cols-2 gap-10'>
                     {
                         projects.filter(project => project.status === 'active').map(project => (
-                            <div className="">
-                                <ProjectCard project={project} />
-                            </div>
+                            <ProjectCard project={project} key={project.id+project.status} />
                         ))
                     }
                 </div>

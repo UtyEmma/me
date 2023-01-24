@@ -16,7 +16,7 @@ export const BlogPost = ({post}: IBlogPost) => {
             <div className="sm:flex">
                 <div className="flex-shrink-0 relative rounded-xl overflow-hidden w-full sm:w-56 h-44">
                     <Link href={post.link}>
-                        <Image className="group-hover:scale-105 transition-transform duration-500 ease-in-out w-full h-full absolute top-0 left-0 object-cover rounded-xl" src={post.thumbnail} alt="Image Description" />
+                        <img className="group-hover:scale-105 transition-transform duration-500 ease-in-out w-full h-full absolute top-0 left-0 object-cover rounded-xl" src={post.thumbnail} alt="Image Description" />
                     </Link>
                 </div>
                 <div className="mt-4 sm:mt-0 sm:ml-6 py-2 px-0">

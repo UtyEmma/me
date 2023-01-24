@@ -240,11 +240,9 @@ export default function Home({projects, posts}: IHomeProps) {
                     </div>
 
                     <div className="max-w-7xl  mx-auto">
-                    {/* Grid */}
-                    <div className="grid lg:grid-cols-2 lg:gap-y-16 gap-10">
-                        {posts.items.map(post => <BlogPost post={post} />)}
-                    </div>
-                    {/* End Grid */}
+                        <div className="grid lg:grid-cols-2 lg:gap-y-16 gap-10">
+                            {posts.items.map((post, i) => <BlogPost post={post} key={post.title.split(' ').join('')+i} />)}
+                        </div>
                     </div>
 
                     
