@@ -11,7 +11,7 @@ interface IProjectCardProps {
     project: IProject
 }
 
-export const ProjectCard = ({project}: IProjectCardProps) => {
+export default function ProjectCard ({project}: IProjectCardProps) {
     const {theme} = useTheme()
 
     return (

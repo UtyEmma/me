@@ -8,7 +8,7 @@ interface IBlogPost {
     post: IPostItem
 }
 
-export const BlogPost = ({post}: IBlogPost) => {
+export default function BlogPost ({post}: IBlogPost) {
     const {theme} = useTheme()
     
     return (

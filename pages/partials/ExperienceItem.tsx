@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const ExperienceItem = () => {
+export default function ExperienceItem  () {
     return (
         <div className=''>
             <div className="">
