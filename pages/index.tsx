@@ -209,7 +209,7 @@ export default function Home({projects, posts}: IHomeProps) {
                     <div>
                         <Slider {...settings}  >
                             {
-                                projects.filter(project => project.status === 'active').map(project => (
+                                projects?.filter(project => project.status === 'active').map(project => (
                                     <div className="md:px-2" key={project.id}>
                                         <ProjectCard project={project} />
                                     </div>
@@ -241,7 +241,7 @@ export default function Home({projects, posts}: IHomeProps) {
 
                     <div className="max-w-7xl  mx-auto">
                         <div className="grid lg:grid-cols-2 lg:gap-y-16 gap-10">
-                            {posts.items.map((post, i) => <BlogPost post={post} key={post.title.split(' ').join('')+i} />)}
+                            {posts?.items?.map((post, i) => <BlogPost post={post} key={post.title.split(' ').join('')+i} />)}
                         </div>
                     </div>
 
