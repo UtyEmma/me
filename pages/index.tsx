@@ -323,7 +323,7 @@ export default function Home({projects, posts}: IHomeProps) {
 }
 
 export async function getServerSideProps() {
-    const res = await fetch(`http://localhost:3000/api/home`, {
+    const res = await fetch(`${process.env.APP_URL}/api/home`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
