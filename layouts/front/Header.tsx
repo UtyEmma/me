@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { useAutoAnimate } from '@formkit/auto-animate/react'
 import { useTheme } from 'next-themes'
 import { Link as ScrollLink, Button, Element, Events, animateScroll as scroll, scrollSpy, scroller, animateScroll } from 'react-scroll'
+import { ResumeLink } from '../../pages/api/data/utils'
 
 interface IHeader {
     title: string
@@ -94,7 +95,7 @@ export const Header = ({title} : IHeader) => {
                                 <ScrollLink to="projects" className='cursor-pointer' offset={-50} duration={500} spy={true} hashSpy={true} activeClass="text-purple-600" smooth={true}>Projects</ScrollLink>
                             </li>
                             <li className='hover:-translate-y-1 font-medium hover:font-semi-bold hover:text-purple-600  transition-all duration-300'>
-                                <Link href={""}>Resume</Link>
+                                <Link href={ResumeLink} target="_blank">Resume</Link>
                             </li>
                             <li className='hover:-translate-y-1 font-medium hover:font-semi-bold hover:text-purple-600 transition-all duration-300'>
                                 <ScrollLink to="blog" className='cursor-pointer' offset={-50} duration={500} spy={true} hashSpy={true} activeClass="text-purple-600" smooth={true}>Blog</ScrollLink>
@@ -128,6 +129,11 @@ export const Header = ({title} : IHeader) => {
                             <ul>
                                 <li className='transition-all duration-300 hover:text-xl hover:bg-gray-50 hover:text-black px-5 py-3 text-lg'>Skills</li>
                                 <li className='transition-all duration-300 hover:text-xl hover:bg-white px-5 py-3 text-lg'>Projects</li>
+                                <li className='transition-all duration-300 hover:text-xl hover:bg-white px-5 py-3 text-lg'>
+                                    <Link href={ResumeLink} target="_blank" >
+                                        Resume
+                                    </Link>
+                                </li>
                                 <li className='transition-all duration-300 hover:text-xl hover:bg-white px-5 py-3 text-lg'>Blog</li>
                                 <li className='transition-all duration-300 hover:text-xl hover:bg-white px-5 py-3 text-lg'>Contact</li>
                             </ul>

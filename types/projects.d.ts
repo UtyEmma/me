@@ -1,13 +1,11 @@
 export interface IProject {
-    _id: string
+    id: number
     title: string
     type: string
     description: string
-    tech: string
+    tech: string[]
     image: string
-    status: string
-    views: number
-    clicks: number
-    createdAt: string
-    updatedAt: string
+    status: 'active' | 'inactive'
+    link: string
+    github: null | string
 }

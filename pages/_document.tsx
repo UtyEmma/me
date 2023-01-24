@@ -2,17 +2,8 @@ import { Html, Head, Main, NextScript } from 'next/document'
 import { useEffect, useState } from 'react'
 
 export default function Document() {
-
-  const [theme, setTheme] = useState('')
-
-  // useEffect(() => {
-  //   const theme = localStorage.getItem('theme')
-  //   setTheme(theme || '')
-  // }, [])
-
   return (
-    // className={'dark'}
-    <Html  lang='en'>
+    <Html lang='en'>
         <Head >
             <link rel="preconnect" href="https://fonts.googleapis.com" />
             <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin='true' />

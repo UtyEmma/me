@@ -12,8 +12,7 @@ import Instagram from '../components/Icons/Instagram'
 import { LinkedIn } from '../components/Icons/LinkedIn'
 import Twitter from '../components/Icons/Twitter'
 import Whatsapp from '../components/Icons/WhatsApp'
-import { BlogPostCard } from '../layouts/blogposts/BlogPostCard'
-import { ExperienceItem } from '../layouts/Experience/ExperienceItem'
+import { ExperienceItem } from './partials/ExperienceItem'
 import { Footer } from '../layouts/front/Footer'
 import { FrontLayout } from '../layouts/front/FrontLayout'
 import { Header } from '../layouts/front/Header'
@@ -27,14 +26,18 @@ import SkillBlock  from './partials/SkillBlock'
 import { Element } from 'react-scroll'
 import { useTheme } from 'next-themes'
 import { HeroBg } from './partials/HeroBg'
+import { IPosts } from '../types/posts'
+import { BlogPost } from './partials/BlogPost'
+import { ResumeLink } from './api/data/utils'
 
 
 interface IHomeProps {
-    projects: IProject[]
+    projects: IProject[],
+    posts: IPosts
 }
 
-export default function Home({projects}: IHomeProps) {
-
+export default function Home({projects, posts}: IHomeProps) {
+    
     const settings = {
         dots: true,
         infinite: true,
@@ -92,8 +95,8 @@ export default function Home({projects}: IHomeProps) {
                             </div>
 
                             <div className='flex space-x-3 my-10'>
-                                <Link href={''} >
-                                    <Button className=''>Download Resume</Button>
+                                <Link href={ResumeLink}  target="_blank">
+                                    <Button className=''>Download My Resume</Button>
                                 </Link>
                             </div>
                         </div>
@@ -141,9 +144,6 @@ export default function Home({projects}: IHomeProps) {
                             </div>
                         </div>
                     </div>
-
-                    {/* <div className="w-96 h-96 border absolute -bottom-48 bg-black right-0 rounded-full " /> */}
-
                 </div>
             </div>
 
@@ -187,7 +187,7 @@ export default function Home({projects}: IHomeProps) {
                             </div>
 
                             <div className="mt-10">
-                                <Link href={''} >
+                                <Link href={ResumeLink} target="_blank" >
                                     <Button className='flex gap-x-2 items-center justify-center'>Download Resume </Button> 
                                 </Link>
                             </div>
@@ -209,8 +209,8 @@ export default function Home({projects}: IHomeProps) {
                     <div>
                         <Slider {...settings}  >
                             {
-                                projects.map(project => (
-                                    <div className="md:px-2" key={project._id}>
+                                projects.filter(project => project.status === 'active').map(project => (
+                                    <div className="md:px-2" key={project.id}>
                                         <ProjectCard project={project} />
                                     </div>
                                 ))
@@ -219,10 +219,10 @@ export default function Home({projects}: IHomeProps) {
                     </div>
 
                     <div className="space-x-5 pt-10">
-                        <Link href={''} >
+                        <Link href={'/projects'} >
                             <Button className='bg-transparent border-black text-black hover:text-white hover:bg-black'>My Projects</Button> 
                         </Link>
-                        <Link href={''} >
+                        <Link href={ResumeLink} target="_blank" >
                             <Button className=''>My Resume</Button> 
                         </Link>
                     </div>
@@ -233,7 +233,7 @@ export default function Home({projects}: IHomeProps) {
                 <div className="max-w-7xl mx-auto px-5 py-20 md:px-0 space-y-5">
                     <div className=' flex space-x-5 items-center'>
                         <div className='md:w-1/2'>
-                            <p className='text-2xl md:text-3xl uppercase font-semibold bg-clip-text bg-gradient-to-r from-purple-800 to-purple-400 text-transparent mb-0'>03. Featured Posts</p>
+                            <p className='text-2xl md:text-3xl uppercase font-semibold bg-clip-text bg-gradient-to-r from-purple-800 to-purple-400 text-transparent mb-0'>03. Featured Articles</p>
                             <p className='text-xl text-gray-500'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum sed quas vel praesentium quidem veritatis mollitia tempora impedit soluta dolorum?</p>
                         </div>
                         <hr className='border-black flex-1 hidden md:block' />
@@ -242,37 +242,15 @@ export default function Home({projects}: IHomeProps) {
                     <div className="max-w-7xl  mx-auto">
                     {/* Grid */}
                     <div className="grid lg:grid-cols-2 lg:gap-y-16 gap-10">
-                        <div className="group overflow-hidden rounded-xl" >
-                            <div className="sm:flex">
-                                <div className="flex-shrink-0 relative overflow-hidden w-full sm:w-56 h-44">
-                                    <Link href={''}>
-                                        <img className="group-hover:scale-105 transition-transform duration-500 ease-in-out w-full h-full absolute top-0 left-0 object-cover rounded-xl" src="https://images.unsplash.com/photo-1540575861501-7cf05a4b125a" alt="Image Description" />
-                                    </Link>
-                                </div>
-                                <div className="mt-4 sm:mt-0 sm:ml-6 py-2 px-0">
-                                    {/* <p className="mt-2 text-gray-600 dark:text-gray-400 text-sm">Web Development</p> */}
-                                    <Link href={''} >
-                                        <h3 className="text-lg font-semibold text-gray-800 group-hover:text-gray-600 dark:text-gray-300 dark:group-hover:text-white">How to get started in Web Development</h3>
-                                    </Link>
-                                    <p className="mt-2 text-gray-600 dark:text-gray-400">Produce professional, reliable streams easily leveraging Preline&apos;s innovative broadcast studio</p>
-                                    <p className="mt-3 inline-flex items-center gap-x-1.5 text-purple-600 decoration-2 hover:underline font-medium">
-                                        Read more
-                                        <svg className="w-2.5 h-2.5" width={16} height={16} viewBox="0 0 16 16" fill="none">
-                                            <path d="M5.27921 2L10.9257 7.64645C11.1209 7.84171 11.1209 8.15829 10.9257 8.35355L5.27921 14" stroke="currentColor" strokeWidth={2} strokeLinecap="round" />
-                                        </svg>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
+                        {posts.items.map(post => <BlogPost post={post} />)}
                     </div>
                     {/* End Grid */}
                     </div>
 
                     
-                    <div className="">
-                        <Link href={''} >
-                            <Button className='bg-transparent border-black text-black hover:text-white hover:bg-black'>Blog Posts</Button> 
+                    <div className="mt-10 pt-10">
+                        <Link href={posts.feed.url} >
+                            <Button className='bg-transparent border-black text-black hover:text-white hover:bg-black'>Visit My Blog</Button> 
                         </Link>
                     </div>
                 </div>
@@ -343,8 +321,9 @@ export default function Home({projects}: IHomeProps) {
         </FrontLayout>
     )
 }
+
 export async function getServerSideProps() {
-    const res = await fetch(`http://localhost:3000/api/projects/fetch`, {
+    const res = await fetch(`http://localhost:3000/api/home`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -352,9 +331,11 @@ export async function getServerSideProps() {
         },
     })
 
-    const projects = (await res.json()).projects
-  
-    // Pass data to the page via props
-    return { props: { projects } }
+    const data = await res.json()
+
+    const posts = data.posts 
+    const projects = data.projects
+    
+    return { props: { projects, posts } }
 }
 

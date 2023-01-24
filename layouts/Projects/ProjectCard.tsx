@@ -12,6 +12,7 @@ interface IProjectCardProps {
 
 export const ProjectCard = ({project}: IProjectCardProps) => {
     const {theme} = useTheme()
+    console.log(project)
 
     return (
         <div className='group'>
@@ -25,23 +26,24 @@ export const ProjectCard = ({project}: IProjectCardProps) => {
                 <div>
                     <div className='flex text-xs flex-wrap gap-1'>
                         {
-                            JSON.parse(project.tech).map((tech : any, i: number) => <span key={tech.value} className='tracking-wide text-gray-500 font-semibold'>{tech.value} {JSON.parse(project.tech).length > i + 1 ? '-' : ''} </span>)
+                            project.tech.map((tech : any, i: number) => <span key={tech} className='tracking-wide text-gray-500 font-semibold'>{tech} {project.tech.length > i + 1 ? '-' : ''} </span>)
                         }                        
                     </div>
                     <h3 className={`font-semibold tracking-wide ${theme == 'dark' ? 'text-white' : ''}`}>{project.title}</h3>
-                    <p className='mb-0 text-sm tracking-wide text-gray-500'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet.</p>
+                    <p className='mb-0 text-sm tracking-wide text-gray-500'>{project.description}</p>
                 </div>
 
                 <div className='w-full flex space-x-2 '>
                     <div className='flex space-x-2 '>
-                        <Link href={''} className="inline-flex flex-1 text-sm bg-gray-400 text-white font-light bg-opacity-10 p-1.5 px-10 hover:bg-opacity-25 transition-all duration-500 space-x-2 h-10 items-center">
-                            <span>Visit</span> 
-                            <LinkIcon className='w-4' /> 
-                        </Link>
-                        <Link href={''} className="inline-flex text-sm bg-gray-400 text-white bg-opacity-10 p-1.5 px-2 hover:bg-opacity-25 transition-all duration-500 space-x-2 w-10 h-10">
+                        <Link href={project.link} target={'_blank'} className={`inline-flex text-sm flex-1 bg-gray-400 font-semibold bg-opacity-10 p-1.5 px-10 hover:bg-opacity-25 transition-all duration-500 space-x-2 h-10 items-center ${theme == 'dark' ? 'text-white' : 'text-gray-600'}`}>
+                            <span>Visit Project</span> 
                             {/* <LinkIcon className='w-4' />  */}
+                        </Link>
+                        {
+                            project.github && <Link href={''} className={`inline-flex text-sm bg-gray-400 ${theme == 'dark' ? 'text-white' : 'text-gray-600'} bg-opacity-10 p-1.5 px-2 hover:bg-opacity-25 transition-all duration-500 space-x-2 w-10 h-10`}>
                             <Github fill="#00000" />
                         </Link>
+                        }
                     </div>
                 </div>
             </div>
