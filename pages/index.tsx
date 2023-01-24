@@ -339,20 +339,20 @@ export default function Home() {
     )
 }
 
-export async function getServerSideProps() {
-    const res = await fetch(`http://localhost:3000/api/home`, {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-        },
-    })
+// export async function getServerSideProps() {
+//     const res = await fetch(`http://localhost:3000/api/home`, {
+//         method: 'GET',
+//         headers: {
+//             'Content-Type': 'application/json',
+//             'Accept': 'application/json'
+//         },
+//     })
 
-    const data = await res.json()
+//     const data = await res.json()
 
-    const posts = data.posts 
-    const projects = data.projects
+//     const posts = data.posts 
+//     const projects = data.projects
     
-    return { props: { projects, posts } }
-}
+//     return { props: { projects, posts } }
+// }
 
