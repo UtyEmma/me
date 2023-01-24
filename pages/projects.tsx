@@ -3,7 +3,7 @@ import React from 'react'
 import { Footer } from '../layouts/Footer'
 import { FrontLayout } from '../layouts/FrontLayout'
 import { Header } from '../layouts/Header'
-import { ProjectCard } from './partials/ProjectCard'
+import ProjectCard from './partials/ProjectCard'
 import { IProject } from '../types/projects'
 
 interface IProjects {
