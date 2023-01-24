@@ -1,5 +1,6 @@
 import { LinkIcon } from '@heroicons/react/24/outline'
 import { useTheme } from 'next-themes'
+import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { text } from 'stream/consumers'
@@ -12,13 +13,12 @@ interface IProjectCardProps {
 
 export const ProjectCard = ({project}: IProjectCardProps) => {
     const {theme} = useTheme()
-    console.log(project)
 
     return (
         <div className='group'>
             <div className={`aspect-video  ${theme == 'dark' ? 'bg-gray-500 bg-opacity-10' : 'bg-gray-100'} relative flex group overflow-hidden`}>
                 <div className="p-10">
-                    <img src={project.image} className="object-cover object-center drop-shadow-2xl min-w-full min-h-full group-hover:scale-105 transition-all duration-500" alt="" />
+                    <Image src={project.image} className="object-cover object-center drop-shadow-2xl min-w-full min-h-full group-hover:scale-105 transition-all duration-500" alt={project.title} />
                 </div>
             </div>
             
@@ -26,7 +26,7 @@ export const ProjectCard = ({project}: IProjectCardProps) => {
                 <div>
                     <div className='flex text-xs flex-wrap gap-1'>
                         {
-                            project.tech.map((tech : any, i: number) => <span key={tech} className='tracking-wide text-gray-500 font-semibold'>{tech} {project.tech.length > i + 1 ? '-' : ''} </span>)
+                            project.tech.map((tech : any, i: number) => <span key={tech + '-' + i} className='tracking-wide text-gray-500 font-semibold'>{tech} {project.tech.length > i + 1 ? '-' : ''} </span>)
                         }                        
                     </div>
                     <h3 className={`font-semibold tracking-wide ${theme == 'dark' ? 'text-white' : ''}`}>{project.title}</h3>

@@ -1,7 +1,7 @@
 import axios from "axios"
 import { NextApiRequest, NextApiResponse } from "next"
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+export default async function handler (req: NextApiRequest, res: NextApiResponse) {
     const url = "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@UtyEmma"
     
     const medium = await axios.get(url)

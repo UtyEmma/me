@@ -4,8 +4,9 @@ import { Bars2Icon, ChevronUpIcon, CommandLineIcon, MoonIcon, SunIcon, XMarkIcon
 import Link from 'next/link'
 import { useAutoAnimate } from '@formkit/auto-animate/react'
 import { useTheme } from 'next-themes'
-import { Link as ScrollLink, Button, Element, Events, animateScroll as scroll, scrollSpy, scroller, animateScroll } from 'react-scroll'
-import { ResumeLink } from '../../pages/api/data/utils'
+import { Link as ScrollLink, Element, Events, animateScroll as scroll, scrollSpy, scroller, animateScroll } from 'react-scroll'
+import { MediumLink, ResumeLink } from '../../pages/api/data/utils'
+import { Button } from '../../components/Buttons/Button'
 
 interface IHeader {
     title: string
@@ -92,16 +93,18 @@ export const Header = ({title} : IHeader) => {
                                 <ScrollLink to="about" className='cursor-pointer' offset={-50} duration={500} spy={true} hashSpy={true} activeClass="text-purple-600" smooth={true}>Skills</ScrollLink>
                             </li>
                             <li className='hover:-translate-y-1 font-medium hover:font-semi-bold hover:text-purple-600 transition-all duration-300'>
-                                <ScrollLink to="projects" className='cursor-pointer' offset={-50} duration={500} spy={true} hashSpy={true} activeClass="text-purple-600" smooth={true}>Projects</ScrollLink>
+                                <Link href="/projects"  className={`cursor-pointer`} >Projects</Link>
                             </li>
                             <li className='hover:-translate-y-1 font-medium hover:font-semi-bold hover:text-purple-600  transition-all duration-300'>
                                 <Link href={ResumeLink} target="_blank">Resume</Link>
                             </li>
                             <li className='hover:-translate-y-1 font-medium hover:font-semi-bold hover:text-purple-600 transition-all duration-300'>
-                                <ScrollLink to="blog" className='cursor-pointer' offset={-50} duration={500} spy={true} hashSpy={true} activeClass="text-purple-600" smooth={true}>Blog</ScrollLink>
+                                <Link href={MediumLink} className='cursor-pointer' target={'_blank'}>Blog</Link>
                             </li>
                             <li className='hover:-translate-y-1 font-medium hover:font-semi-bold hover:text-purple-600 transition-all duration-300'>
-                                <ScrollLink to="contact" className='cursor-pointer' offset={-50} duration={500} spy={true} hashSpy={true} activeClass="text-purple-600" smooth={true}>Contact</ScrollLink>
+                                <ScrollLink to="contact" className='cursor-pointer' offset={-50} duration={500} spy={true} hashSpy={true} activeClass="text-purple-600" smooth={true}>
+                                    <Button active>Get in Touch</Button>
+                                </ScrollLink>
                             </li>
                         </ul>
                         <button onClick={toggleTheme}>
@@ -127,15 +130,25 @@ export const Header = ({title} : IHeader) => {
                     <div className='border-t mt-4 bg-transparent md:hidden shadow border-'>
                         <div className={`${theme == 'dark' ? 'text-white' : 'text-black'} py-3`}>
                             <ul>
-                                <li className='transition-all duration-300 hover:text-xl hover:bg-gray-50 hover:text-black px-5 py-3 text-lg'>Skills</li>
-                                <li className='transition-all duration-300 hover:text-xl hover:bg-white px-5 py-3 text-lg'>Projects</li>
-                                <li className='transition-all duration-300 hover:text-xl hover:bg-white px-5 py-3 text-lg'>
-                                    <Link href={ResumeLink} target="_blank" >
+                                <li className='transition-all duration-300 hover:text-xl  hover:text-black px-5 py-3 text-lg'>
+                                    <ScrollLink to="about" className='cursor-pointer  w-full h-full block' offset={-50} duration={500} spy={true} hashSpy={true} activeClass="text-purple-600" smooth={true}>Skills</ScrollLink>
+                                </li>
+                                <li className='transition-all duration-300 hover:text-xl  px-5 py-3 text-lg'>
+                                <Link href="/projects"  className={`cursor-pointer block`} >Projects</Link>
+                                </li>
+                                <li className='transition-all duration-300 hover:text-xl  px-5 py-3 text-lg'>
+                                    <Link href={ResumeLink} className="cursor-pointer w-full h-full block" target="_blank" >
                                         Resume
                                     </Link>
                                 </li>
-                                <li className='transition-all duration-300 hover:text-xl hover:bg-white px-5 py-3 text-lg'>Blog</li>
-                                <li className='transition-all duration-300 hover:text-xl hover:bg-white px-5 py-3 text-lg'>Contact</li>
+                                <li className='transition-all duration-300 hover:text-xl  px-5 py-3 text-lg'>
+                                    <Link href={MediumLink} className='cursor-pointer w-full h-full block' target={'_blank'}>Blog</Link>
+                                </li>
+                                <li className='transition-all duration-300 hover:text-xl hover:bg-white px-5 py-3 text-lg'>
+                                    <ScrollLink to="contact" className='cursor-pointer' offset={-50} duration={500} spy={true} hashSpy={true} activeClass="text-purple-600" smooth={true}>
+                                        <Button active>Get in Touch</Button>
+                                    </ScrollLink>
+                                </li>
                             </ul>
                         </div>
                     </div>

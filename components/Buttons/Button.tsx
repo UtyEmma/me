@@ -3,15 +3,17 @@ import React, { ComponentProps, HTMLAttributes, PropsWithChildren } from 'react'
 
 interface IButtonProps extends PropsWithChildren<HTMLAttributes<HTMLButtonElement>> {
     loading?: boolean
+    active?: boolean
+
 }
 
-export const Button = ({className, children, ...props}: IButtonProps) => {
+export const Button = ({className, active = false, children, ...props}: IButtonProps) => {
     const { theme, setTheme } = useTheme()
 
     return (
         <button className={`group relative inline-block focus:outline-none  active:text-white ${className}`} {...props} >
             <span
-            className="absolute inset-0 translate-x-1.5 translate-y-1.5 bg-purple-500 transition-transform group-hover:translate-y-0 group-hover:translate-x-0"
+            className={`absolute inset-0 bg-purple-500 ${active ? "" : 'translate-x-1.5 translate-y-1.5  transition-transform group-hover:translate-y-0 group-hover:translate-x-0'}`}
         ></span>
         
         <span
