@@ -39,8 +39,10 @@ interface IHomeProps {
     posts: IPosts
 }
 
-export default function Home() {
+export default function Home({projects, posts}: IHomeProps) {
     
+    const { theme, setTheme } = useTheme()
+
     const settings = {
         dots: true,
         infinite: true,
@@ -64,36 +66,17 @@ export default function Home() {
               }
             }
           ]
-    
     };
-
-    const fetchPosts = async () => {
-        const url = "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@UtyEmma"
-    
-        const medium = await axios.get(url)
-    
-        const posts = medium.data    
-        setPosts(posts)
-    }
-
-    const [posts, setPosts] = useState<IPosts>()
-
-    const [projects, setProjects] = useState(ProjectList)
-    const { theme, setTheme } = useTheme()
-
-    useEffect(() => {
-        fetchPosts()
-    }, [])
 
     return (
         <FrontLayout title='Utibe-Abasi Emmanuel'>
             <Header title={"Utibe-Abasi Emmanuel"} />
 
-            <div className='relative'>
+            <div >
                 <HeroBg />
 
-                <div className="max-w-7xl mx-auto pb-10 pt-10 md:pt-24 px-5 md:px-0 relative">
-                    <div className="md:flex items-center">
+                <div className="max-w-7xl mx-auto pb-10 pt-10 md:pt-24 px-5 md:px-0 ">
+                    <div className="md:flex items-center relative -z-10">
                         <div className='md:w-1/2' >
                             <p className='md:text-2xl text-xl px-1 mb-2 bg-clip-text bg-gradient-to-r from-purple-800 to-purple-500 text-transparent '>Hi there, I am</p>
                             <h1 className='md:text-5xl uppercase font-semibold text-5xl  px-0 mb-2  '>Utibe-Abasi  Emmanuel</h1>
@@ -121,11 +104,11 @@ export default function Home() {
                         </div>
 
                         <div className='md:w-1/2'>
-                            <div className={`md:w-2/3 mx-auto bg-transparent p-3 ${theme == 'dark' ? 'bg-gray-500 bg-opacity-10' : 'bg-white border'}  mb-10 group relative shadow`}>
+                            <div className={`md:w-2/3 mx-auto bg-transparent p-3 -z-10 ${theme == 'dark' ? 'bg-gray-500 bg-opacity-10' : 'bg-white border'}  mb-10 group relative shadow`}>
                                 {/* <span className="absolute inset-0 bg-purple-500 bg-opacity-20 blur-lg transition-transform  duration-300" ></span> */}
                                 {/* <span className="absolute inset-0 border bg-white"></span> */}
 
-                                <div className="aspect-square bg-gray-200 mb-2 overflow-hidden relative">
+                                <div className="aspect-square bg-gray-200 mb-2 overflow-hidden relative ">
                                     <img src="/images/utyemma.jpg" alt="" className='object-cover min-h-full group-hover:scale-105 transition-all duration-1000' />
                                 </div>
                                 
@@ -339,20 +322,20 @@ export default function Home() {
     )
 }
 
-// export async function getServerSideProps() {
-//     const res = await fetch(`http://localhost:3000/api/home`, {
-//         method: 'GET',
-//         headers: {
-//             'Content-Type': 'application/json',
-//             'Accept': 'application/json'
-//         },
-//     })
+export async function getServerSideProps() {
+    const res = await fetch(`http://localhost:3000/api/home`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+    })
 
-//     const data = await res.json()
+    const data = await res.json()
 
-//     const posts = data.posts 
-//     const projects = data.projects
+    const posts = data.posts 
+    const projects = data.projects
     
-//     return { props: { projects, posts } }
-// }
+    return { props: { projects, posts } }
+}
 
