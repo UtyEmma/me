@@ -1,16 +1,22 @@
+import moment from 'moment'
 import React from 'react'
+import { IExperience } from '../types/experience'
 
-export default function ExperienceItem  () {
+interface IExperienceItem {
+    experience: IExperience
+}
+
+export default function ExperienceItem  ({experience}: IExperienceItem) {
     return (
         <div className=''>
             <div className="">
-                <p className='text-sm text-gray-500 font-medium'>May, 2016 - July, 2018</p>
+                <p className='text-sm text-gray-500 font-medium'>{moment(experience.startdate).format('Do, MMM YYYY')} - {experience.enddate ? moment(experience.enddate).format('Do, MMM YYYY') : 'Present'}</p>
             </div>
             <div className="flex-1">
-                <p className=' font-semibold'>Full Stack Developer - Contract</p>
-                <p className=' font-medium'>Techocraft ICT Academy</p>
+                <p className=' font-semibold'>{experience.role} - {experience.type}</p>
+                <p className=' font-medium'>{experience.company}</p>
                 <div>
-                    <p className='text-gray-500'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam veniam vero saepe nemo quod perferendis impedit voluptatem cumque tenetur nesciunt. Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, porro.</p>
+                    <p className='text-gray-500'>{experience.description}</p>
                 </div>
             </div>
         </div>

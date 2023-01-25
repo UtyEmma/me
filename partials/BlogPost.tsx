@@ -20,7 +20,7 @@ export default function BlogPost ({post}: IBlogPost) {
                     </Link>
                 </div>
                 <div className="mt-4 sm:mt-0 sm:ml-6 py-2 px-0">
-                    <Link href={''} >
+                    <Link href={post.link} >
                         <h3 className={`text-lg font-medium line-clamp-2 ${theme == 'dark' ? 'text-gray-500 group-hover:text-white' : 'text-gray-600 group-hover:text-gray-700'}`}>{post.title}</h3>
                     </Link>
                     <div className='flex gap-2 gap-x-1 mt-3 items-center flex-wrap' >

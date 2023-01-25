@@ -43,7 +43,7 @@ export default function Projects({projects}: IProjects) {
 }
 
 export async function getServerSideProps() {
-    const res = await fetch(`http://localhost:3000/api/projects`, {
+    const res = await fetch(`${process.env.APP_URL}/api/projects`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',

@@ -1,5 +1,3 @@
-import { ArrowDownOnSquareIcon, ArrowRightIcon, DocumentArrowDownIcon, EnvelopeIcon, MagnifyingGlassIcon, PhoneArrowUpRightIcon, PhoneIcon, UserIcon } from '@heroicons/react/24/outline'
-import { ArrowDownIcon, BriefcaseIcon, TvIcon } from '@heroicons/react/24/outline'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -23,7 +21,7 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import Typewriter from 'typewriter-effect';
 import SkillBlock  from '../partials/SkillBlock'
-import { Element } from 'react-scroll'
+import { Element, Link as ScrollLink } from 'react-scroll'
 import { useTheme } from 'next-themes'
 import HeroBg  from '../partials/HeroBg'
 import { IPosts } from '../types/posts'
@@ -32,14 +30,18 @@ import { ResumeLink } from './api/data/utils'
 import { useEffect, useState } from 'react'
 import { ProjectList } from './api/data/projects'
 import axios from 'axios'
+import { ISkill } from '../types/skills'
+import { IExperience } from '../types/experience'
 
 
 interface IHomeProps {
     projects: IProject[],
     posts: IPosts
+    skills: ISkill[]
+    experience: IExperience[]
 }
 
-export default function Home({projects, posts}: IHomeProps) {
+export default function Home({projects, posts, skills, experience}: IHomeProps) {
     
     const { theme, setTheme } = useTheme()
 
@@ -75,7 +77,7 @@ export default function Home({projects, posts}: IHomeProps) {
             <div >
                 <HeroBg />
 
-                <div className="max-w-7xl mx-auto pb-10 pt-10 md:pt-24 px-5 md:px-0 ">
+                <div className="max-w-7xl mx-auto md:pb-0 pb-10 pt-10 md:pt-24 px-5 md:px-0 ">
                     <div className="md:flex items-center relative -z-10">
                         <div className='md:w-1/2' >
                             <p className='md:text-2xl text-xl px-1 mb-2 bg-clip-text bg-gradient-to-r from-purple-800 to-purple-500 text-transparent '>Hi there, I am</p>
@@ -121,7 +123,7 @@ export default function Home({projects, posts}: IHomeProps) {
                             </div>
                         </div>
 
-                        <div className="md:absolute md:bottom-0 md:right-0 " >
+                        <div className="md:absolute md:bottom-0 md:right-0" >
                             <div className='flex md:flex-col items-center gap-5 md:gap-5'>
                                 <div  className={`border w-10  md:hidden ${theme === 'dark' ? 'border-white' : 'border-gray-500'}`}></div>
                                 <Link href={''} className={`${theme == 'dark' ? 'text-white' : "text-purple-600"} hover:text-purple-700 transition-all duration-300`}>
@@ -162,30 +164,27 @@ export default function Home({projects, posts}: IHomeProps) {
                     <div className='md:flex gap-10'>
                         <div className='md:w-1/2 '>
                             <div className='flex items-center mb-3'>
-                                <hr className='w-1/12 ' />
-                                <p className='text-xl  ml-3 uppercase '>Skills</p>
+                                <hr className='w-2/12 ' />
+                                <p className='text-xl font-medium ml-3 uppercase '>Skills</p>
                             </div>
                             <div className='flex justify-start flex-wrap gap-3'>
-                                <SkillBlock img='/images/social/javascript.svg' title='Javascript' />
-                                <SkillBlock img='/images/social/reactjs.svg' title='React JS' />
-                                <SkillBlock img='/images/social/angularjs.svg' title='Angular JS' />
-                                <SkillBlock img='/images/social/mongodb.svg' title='Mongo DB' />
-                                <SkillBlock img='/images/social/typescript.svg' title='Typescript' />
-                                <SkillBlock img='/images/social/nodejs.svg' title='Node JS' />
-                                <SkillBlock img='/images/social/golang.svg' title='Golang' />
-                                <SkillBlock img='/images/social/git.svg' title='Git' />
-                                <SkillBlock img='/images/social/mysql.svg' title='MySQL' />
+                                {
+                                    skills.filter(skill => skill.status === true).map(skill => (
+                                        <SkillBlock img={skill.logo} title={skill.name} />
+                                    ))
+                                }
                             </div>
                         </div>
                         <div className='md:w-1/2 w-full mt-6 md:mt-0'>
                             <div className='flex items-center mb-3'>
-                                <hr className='w-1/12' />
-                                <p className='text-xl ml-3 uppercase'>Experience</p>
+                                <hr className='w-2/12' />
+                                <p className='text-xl font-medium ml-3 uppercase'>Experience</p>
                             </div>
 
                             <div className='space-y-6'>
-                                <ExperienceItem />
-                                <ExperienceItem />
+                                {
+                                    experience.filter(exp => exp.status === true).map(exp => <ExperienceItem experience={exp} />)
+                                }
                             </div>
 
                             <div className="mt-10">
@@ -203,7 +202,7 @@ export default function Home({projects, posts}: IHomeProps) {
                     <div className=' flex space-x-5 items-center'>
                         <div className='md:w-1/2'>
                             <p className='text-2xl md:text-3xl  mb-0 uppercase font-semibold bg-clip-text bg-gradient-to-r from-purple-800 to-purple-400 text-transparent'>02. Portfolio</p>
-                            <p className='text-xl text-gray-500'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum sed quas vel praesentium quidem veritatis mollitia tempora impedit soluta dolorum?</p>
+                            <p className='text-xl text-gray-500'>Check out some amazing projects I've collaborated on.</p>
                         </div>
                         <hr className='border-black flex-1 hidden md:block' />
                     </div>
@@ -222,11 +221,11 @@ export default function Home({projects, posts}: IHomeProps) {
 
                     <div className="space-x-5 pt-10">
                         <Link href={'/projects'} >
-                            <Button className='bg-transparent border-black text-black hover:text-white hover:bg-black'>My Projects</Button> 
+                            <Button className='bg-transparent border-black text-black hover:text-white hover:bg-black'>See more Projects</Button> 
                         </Link>
-                        <Link href={ResumeLink} target="_blank" >
-                            <Button className=''>My Resume</Button> 
-                        </Link>
+                        <ScrollLink to="contact" className='cursor-pointer' offset={-50} duration={500} spy={true} hashSpy={true} activeClass="text-purple-600" smooth={true} >
+                            <Button className=''>Let's Talk</Button> 
+                        </ScrollLink>
                     </div>
                 </div>
             </Element>
@@ -243,7 +242,7 @@ export default function Home({projects, posts}: IHomeProps) {
 
                     <div className="max-w-7xl  mx-auto">
                         <div className="grid lg:grid-cols-2 lg:gap-y-16 gap-10">
-                            {posts?.items?.map((post, i) => <BlogPost post={post} key={post.title.split(' ').join('')+i} />)}
+                            {posts?.items?.map((post, i) => i > 1 ? "" : <BlogPost post={post} key={post.title.split(' ').join('')+i} />)}
                         </div>
                     </div>
 
@@ -259,8 +258,8 @@ export default function Home({projects, posts}: IHomeProps) {
 
             <Element name='contact' className='pt-10 md:py-20'>
                 <div className='text-center '>
-                    <p className='text-3xl  md:text-5xl font-medium'>Hi there! 👋</p>
-                    <p className='text-xl  md:text-3xl mt-3 text-gray-500'>Thank you for checking out my work </p>
+                    <p className='text-3xl  md:text-3xl font-medium'>Interested in collaborating with me?</p>
+                    <p className='text-xl  md:text-2xl mt-3 text-gray-500 md:w-3/5 mx-auto'>I’m always open to discussing software development work or partnership opportunities. <span className='italic text-purple-600'>Let's talk!</span></p>
                 </div>
 
                 <div className='my-20 md:flex justify-center space-y-5 md:space-y-0 md:gap-x-10'>
@@ -279,12 +278,12 @@ export default function Home({projects, posts}: IHomeProps) {
                 </div>
                 
                 <div className="text-center mb-5 md:mt-10">
-                    <h4 className='text-xl md:text-3xl'>Lets connect on Social Media</h4>
+                    <h4 className='text-xl md:text-3xl'>Let's connect on Social Media</h4>
                 </div>
 
                 <div className='flex justify-center md:justify-between gap-x-4 items-center w-full mb-5'>
                     <hr className='w-1/4 border-gray-400 hidden md:block' />
-                    <div className='space-x-8 md:space-x-5 flex flex-1 justify-center items-center'>
+                    <div className='space-x-8 md:space-x-5 flex flex-1 justify-center  items-center'>
                         <Link href="" className='transition-all duration-500 flex items-center  gap-x-2  hover:-translate-y-2'>
                             <LinkedIn size={30} fill="#fafafa" /> <span className='hidden md:block'>LinkedIn</span>
                         </Link>
@@ -331,11 +330,7 @@ export async function getServerSideProps() {
         },
     })
 
-    const data = await res.json()
-
-    const posts = data.posts 
-    const projects = data.projects
-    
-    return { props: { projects, posts } }
+    const data : IHomeProps = await res.json()    
+    return { props: {...data} }
 }
 
