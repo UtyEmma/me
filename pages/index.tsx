@@ -225,7 +225,7 @@ export default function Home({projects, posts, skills, experience}: IHomeProps) 
                             <Button className='bg-transparent border-black text-black hover:text-white hover:bg-black'>See more Projects</Button> 
                         </Link>
                         <ScrollLink to="contact" className='cursor-pointer' offset={-50} duration={500} spy={true} hashSpy={true} activeClass="text-purple-600" smooth={true} >
-                            <Button className=''>Let's Talk</Button> 
+                            <Button className=''>Let&apos;s Talk</Button> 
                         </ScrollLink>
                     </div>
                 </div>
