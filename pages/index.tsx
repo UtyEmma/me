@@ -171,7 +171,7 @@ export default function Home({projects, posts, skills, experience}: IHomeProps) 
                             <div className='flex justify-start flex-wrap gap-3'>
                                 {
                                     skills.filter(skill => skill.status === true).map(skill => (
-                                        <SkillBlock img={skill.logo} title={skill.name} />
+                                        <SkillBlock img={skill.logo} key={skill.name.toLowerCase()} title={skill.name} />
                                     ))
                                 }
                             </div>
@@ -184,7 +184,7 @@ export default function Home({projects, posts, skills, experience}: IHomeProps) 
 
                             <div className='space-y-6'>
                                 {
-                                    experience.filter(exp => exp.status === true).map(exp => <ExperienceItem experience={exp} />)
+                                    experience.filter(exp => exp.status === true).map((exp, index) => <ExperienceItem key={exp.role.toLowerCase() + "-" + index} experience={exp} />)
                                 }
                             </div>
 
@@ -260,7 +260,7 @@ export default function Home({projects, posts, skills, experience}: IHomeProps) 
             <Element name='contact' className='pt-10 md:py-20'>
                 <div className='text-center '>
                     <p className='text-3xl  md:text-3xl font-medium'>Interested in collaborating with me?</p>
-                    <p className='text-xl  md:text-2xl mt-3 text-gray-500 md:w-3/5 mx-auto'>I’m always open to discussing software development work or partnership opportunities. <span className='italic text-purple-600'>Let's talk!</span></p>
+                    <p className='text-xl  md:text-2xl mt-3 text-gray-500 md:w-3/5 mx-auto'>I&apos;m always open to discussing software development work or partnership opportunities. <span className='italic text-purple-600'>Let&apos;s talk!</span></p>
                 </div>
 
                 <div className='my-20 md:flex justify-center space-y-5 md:space-y-0 md:gap-x-10'>
@@ -279,7 +279,7 @@ export default function Home({projects, posts, skills, experience}: IHomeProps) 
                 </div>
                 
                 <div className="text-center mb-5 md:mt-10">
-                    <h4 className='text-xl md:text-3xl'>Let's connect on Social Media</h4>
+                    <h4 className='text-xl md:text-3xl'>Let&apos;s connect on Social Media</h4>
                 </div>
 
                 <div className='flex justify-center md:justify-between gap-x-4 items-center w-full mb-5'>
