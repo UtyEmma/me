@@ -18,8 +18,8 @@ export const ProjectList: IProject[] = [
         title: "Jedidiah Cares Global Initiative",
         description: "",
         link: "https://jedidiahcares.org",
-        image: "https://jedidiahcares.org",
-        status: 'inactive',
+        image: "/images/screenshots/jedidiahcares.png",
+        status: 'active',
         tech: ['ReactJS', 'Laravel', "Inertia JS"],
         type: "NGO/Charity Website",
         github: null
@@ -106,6 +106,18 @@ export const ProjectList: IProject[] = [
         status: 'inactive',
         tech: ['PHP', "MySql", "HTML5", "CSS3"],
         type: "NGO/Charity Website",
+        github: null
+    },
+    
+    {
+        id: 10,
+        title: "Uncommon Product NG",
+        description: "",
+        link: "https://buyproductng.com/",
+        image: "/images/screenshots/uncommonproduct.png",
+        status: 'active',
+        tech: ['PHP', "Wordpress"],
+        type: "Ecommerce Website",
         github: null
     },
 

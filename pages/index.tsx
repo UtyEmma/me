@@ -32,6 +32,7 @@ import { ProjectList } from './api/data/projects'
 import axios from 'axios'
 import { ISkill } from '../types/skills'
 import { IExperience } from '../types/experience'
+import { SocialLinks } from './api/data/social'
 
 
 interface IHomeProps {
@@ -126,22 +127,22 @@ export default function Home({projects, posts, skills, experience}: IHomeProps) 
                         <div className="md:absolute md:bottom-0 md:right-0" >
                             <div className='flex md:flex-col items-center gap-5 md:gap-5'>
                                 <div  className={`border w-10  md:hidden ${theme === 'dark' ? 'border-white' : 'border-gray-500'}`}></div>
-                                <Link href={''} className={`${theme == 'dark' ? 'text-white' : "text-purple-600"} hover:text-purple-700 transition-all duration-300`}>
+                                <Link href={SocialLinks.facebook} className={`${theme == 'dark' ? 'text-white' : "text-purple-600"} hover:text-purple-700 transition-all duration-300`}>
                                     <Facebook size={30} />
                                 </Link>
-                                <Link href={''} className={`${theme == 'dark' ? 'text-white' : "text-purple-600"} hover:text-purple-700 transition-all duration-300`}>
+                                <Link href={SocialLinks.twitter} className={`${theme == 'dark' ? 'text-white' : "text-purple-600"} hover:text-purple-700 transition-all duration-300`}>
                                     <Twitter size={30} />
                                 </Link>
-                                <Link href={''} className={`${theme == 'dark' ? 'text-white' : "text-purple-600"} hover:text-purple-700 transition-all duration-300`}>
+                                <Link href={SocialLinks.instagram} className={`${theme == 'dark' ? 'text-white' : "text-purple-600"} hover:text-purple-700 transition-all duration-300`}>
                                     <Instagram size={30} />
                                 </Link>
-                                <Link href={''} className={`${theme == 'dark' ? 'text-white' : "text-purple-600"} hover:text-purple-700 transition-all duration-300`}>
+                                <Link href={SocialLinks.linkedin} className={`${theme == 'dark' ? 'text-white' : "text-purple-600"} hover:text-purple-700 transition-all duration-300`}>
                                     <LinkedIn size={30} />
                                 </Link>
-                                <Link href={''} className={`${theme == 'dark' ? 'text-white' : "text-purple-600"} hover:text-purple-700 transition-all duration-300`}>
+                                <Link href={SocialLinks.github} className={`${theme == 'dark' ? 'text-white' : "text-purple-600"} hover:text-purple-700 transition-all duration-300`}>
                                     <Github size={30} fill="#00000" />
                                 </Link>
-                                <Link href={''} className={`${theme == 'dark' ? 'text-white' : "text-purple-600"} hover:text-purple-700 transition-all duration-300`}>
+                                <Link href={SocialLinks.whatsapp} className={`${theme == 'dark' ? 'text-white' : "text-purple-600"} hover:text-purple-700 transition-all duration-300`}>
                                     <Whatsapp size={30} />
                                 </Link>
                                 <div style={{width: '2px'}} className={`${theme == 'dark' ? 'bg-white' : "bg-purple-600"} h-20 md:block hidden border-left`}></div>
@@ -156,7 +157,7 @@ export default function Home({projects, posts, skills, experience}: IHomeProps) 
                     <div className=' flex space-x-5 items-center'>
                         <div className='md:w-1/2'>
                             <p className='text-2xl md:text-3xl uppercase font-semibold bg-clip-text bg-gradient-to-r from-purple-800 to-purple-400 text-transparent mb-0'>01. Skills & Experience</p>
-                            <p className='text-xl text-gray-500'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum sed quas vel praesentium quidem veritatis mollitia tempora impedit soluta dolorum?</p>
+                            <p className='text-xl text-gray-500'>Here are some of my super powers and what I have been doing with them.</p>
                         </div>
                         <hr className='border-black flex-1 hidden md:block' />
                     </div>
@@ -201,8 +202,8 @@ export default function Home({projects, posts, skills, experience}: IHomeProps) 
                 <div className="max-w-7xl mx-auto px-5 py-20 md:px-0 space-y-5">
                     <div className=' flex space-x-5 items-center'>
                         <div className='md:w-1/2'>
-                            <p className='text-2xl md:text-3xl  mb-0 uppercase font-semibold bg-clip-text bg-gradient-to-r from-purple-800 to-purple-400 text-transparent'>02. Portfolio</p>
-                            <p className='text-xl text-gray-500'>Check out some amazing projects I've collaborated on.</p>
+                            <p className='text-2xl md:text-3xl  mb-0 uppercase font-semibold bg-clip-text bg-gradient-to-r from-purple-800 to-purple-400 text-transparent'>02. Featured Projects</p>
+                            <p className='text-xl text-gray-500'>Check out a selection of some amazing projects I worked on.</p>
                         </div>
                         <hr className='border-black flex-1 hidden md:block' />
                     </div>
@@ -235,7 +236,7 @@ export default function Home({projects, posts, skills, experience}: IHomeProps) 
                     <div className=' flex space-x-5 items-center'>
                         <div className='md:w-1/2'>
                             <p className='text-2xl md:text-3xl uppercase font-semibold bg-clip-text bg-gradient-to-r from-purple-800 to-purple-400 text-transparent mb-0'>03. Featured Articles</p>
-                            <p className='text-xl text-gray-500'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum sed quas vel praesentium quidem veritatis mollitia tempora impedit soluta dolorum?</p>
+                            <p className='text-xl text-gray-500'>I love sharing my thoughts, experience and technologies to help others. Here are some you might be interested in.</p>
                         </div>
                         <hr className='border-black flex-1 hidden md:block' />
                     </div>
@@ -284,27 +285,27 @@ export default function Home({projects, posts, skills, experience}: IHomeProps) 
                 <div className='flex justify-center md:justify-between gap-x-4 items-center w-full mb-5'>
                     <hr className='w-1/4 border-gray-400 hidden md:block' />
                     <div className='space-x-8 md:space-x-5 flex flex-1 justify-center  items-center'>
-                        <Link href="" className='transition-all duration-500 flex items-center  gap-x-2  hover:-translate-y-2'>
+                        <Link href={SocialLinks.linkedin} className='transition-all duration-500 flex items-center  gap-x-2  hover:-translate-y-2'>
                             <LinkedIn size={30} fill="#fafafa" /> <span className='hidden md:block'>LinkedIn</span>
                         </Link>
                         <hr className='w-3 hidden md:block border-gray-400' />
-                        <Link href="" className='transition-all duration-500 flex items-center gap-x-2  hover:-translate-y-2'>
+                        <Link href={SocialLinks.twitter} className='transition-all duration-500 flex items-center gap-x-2  hover:-translate-y-2'>
                             <Twitter size={30} fill="#fafafa" /> <span className='hidden md:block'>Twitter</span>
                         </Link>
                         <hr className='w-3 hidden md:block border-gray-400' />
-                        <Link href="" className='transition-all duration-500 flex items-center gap-x-2 hover:-translate-y-2'>
+                        <Link href={SocialLinks.github} className='transition-all duration-500 flex items-center gap-x-2 hover:-translate-y-2'>
                             <Github size={30} fill="#fafafa" /> <span className='hidden md:block'>Github</span>
                         </Link>
                         <hr className='w-3 hidden md:block border-gray-400' />
-                        <Link href="" className='transition-all duration-500 flex items-center gap-x-2  hover:-translate-y-2'>
+                        <Link href={SocialLinks.facebook} className='transition-all duration-500 flex items-center gap-x-2  hover:-translate-y-2'>
                             <Facebook size={30} fill="#fafafa" /> <span className='hidden md:block'>Facebook</span>
                         </Link>
                         <hr className='w-3 hidden md:block border-gray-400' />
-                        <Link href="" className='transition-all duration-500 flex items-center gap-x-2 hover:-translate-y-2'>
+                        <Link href={SocialLinks.instagram} className='transition-all duration-500 flex items-center gap-x-2 hover:-translate-y-2'>
                             <Instagram size={30} fill="#fafafa" /> <span className='hidden md:block'>Instagram</span>
                         </Link>
                         <hr className='w-3 hidden md:block border-gray-400' />
-                        <Link href="" className='transition-all duration-500 flex items-center gap-x-2 hover:-translate-y-2'>
+                        <Link href={SocialLinks.whatsapp} className='transition-all duration-500 flex items-center gap-x-2 hover:-translate-y-2'>
                             <Whatsapp size={30} fill="#fafafa" /> <span className='hidden md:block'>WhatsApp</span>
                         </Link>
                         {/* <hr className='w-3 hidden md:block' /> */}
