@@ -49,8 +49,6 @@ export default function Home({projects, posts, skills, experience}: IHomeProps) 
 
     const slider = useRef<any>()
 
-    console.log(posts)
-
     const settings = {
         dots: false,
         infinite: true,
