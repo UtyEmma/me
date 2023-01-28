@@ -248,7 +248,7 @@ export default function Home({projects, posts, skills, experience}: IHomeProps) 
                     </div>
                     
                     <div className="flex ">
-                        <div className="space-5 pt-5 md:pt-10">
+                        <div className="flex flex-wrap gap-5 pt-5 md:pt-10">
                             <Link href={'/projects'} >
                                 <Button className='bg-transparent border-black text-black hover:text-white hover:bg-black'>See more Projects</Button> 
                             </Link>
