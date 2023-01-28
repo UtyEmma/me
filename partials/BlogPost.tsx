@@ -24,7 +24,7 @@ export default function BlogPost ({post}: IBlogPost) {
                         <h3 className={`text-lg font-medium line-clamp-2 ${theme == 'dark' ? 'text-gray-500 group-hover:text-white' : 'text-gray-600 group-hover:text-gray-700'}`}>{post.title}</h3>
                     </Link>
                     <div className='flex gap-2 gap-x-1 mt-3 items-center flex-wrap' >
-                        <p className='text-sm'>Tags:</p>
+                        {/* <p className='text-sm'>Tags:</p> */}
                         {
                             post.categories.map((category, i) => <span key={category + '-' + i} className='text-xs p-1 px-3 rounded bg-purple-500 text-white capitalize'>{category.split('-').join(' ')}</span>)
                         }

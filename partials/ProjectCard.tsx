@@ -35,12 +35,12 @@ export default function ProjectCard ({project}: IProjectCardProps) {
 
                 <div className='w-full flex space-x-2 '>
                     <div className='flex space-x-2 '>
-                        <Link href={project.link} target={'_blank'} className={`inline-flex text-sm flex-1 bg-gray-400 bg-opacity-10 p-1.5 px-10 hover:bg-opacity-25 transition-all duration-500 space-x-2 h-10 items-center ${theme == 'dark' ? 'text-white' : 'text-gray-600'}`}>
+                        <Link href={project.link} target={'_blank'} className={`inline-flex text-sm flex-1 bg-gray-500 bg-opacity-30 p-1.5 px-10 hover:bg-opacity-25 transition-all duration-500 space-x-2 h-10 items-center ${theme == 'dark' ? 'text-white' : 'text-black'}`}>
                             <span>Visit Website</span> 
                             {/* <LinkIcon className='w-4' />  */}
                         </Link>
                         {
-                            project.github && <Link href={''} className={`inline-flex text-sm bg-gray-400 ${theme == 'dark' ? 'text-white' : 'text-gray-600'} bg-opacity-10 p-1.5 px-2 hover:bg-opacity-25 transition-all duration-500 space-x-2 w-10 h-10`}>
+                            project.github && <Link href={''} className={`inline-flex text-sm bg-gray-500 ${theme == 'dark' ? 'text-white' : 'text-gray-600'} bg-opacity-10 p-1.5 px-2 hover:bg-opacity-25 transition-all duration-500 space-x-2 w-10 h-10`}>
                             <Github fill="#00000" />
                         </Link>
                         }

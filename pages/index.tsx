@@ -27,12 +27,13 @@ import HeroBg  from '../partials/HeroBg'
 import { IPosts } from '../types/posts'
 import BlogPost  from '../partials/BlogPost'
 import { ResumeLink } from './api/data/utils'
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { ProjectList } from './api/data/projects'
 import axios from 'axios'
 import { ISkill } from '../types/skills'
 import { IExperience } from '../types/experience'
 import { SocialLinks } from './api/data/social'
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline'
 
 
 interface IHomeProps {
@@ -46,12 +47,19 @@ export default function Home({projects, posts, skills, experience}: IHomeProps) 
     
     const { theme, setTheme } = useTheme()
 
+    const slider = useRef<any>()
+
+    console.log(posts)
+
     const settings = {
-        dots: true,
+        dots: false,
         infinite: true,
         speed: 500,
         slidesToShow: 2,
         slidesToScroll: 1,
+        arrows: false,
+        autoplay: true,
+
         responsive: [
             {
               breakpoint: 700,
@@ -127,22 +135,22 @@ export default function Home({projects, posts, skills, experience}: IHomeProps) 
                         <div className="md:absolute md:bottom-0 md:right-0" >
                             <div className='flex md:flex-col items-center gap-5 md:gap-5'>
                                 <div  className={`border w-10  md:hidden ${theme === 'dark' ? 'border-white' : 'border-gray-500'}`}></div>
-                                <Link href={SocialLinks.facebook} className={`${theme == 'dark' ? 'text-white' : "text-purple-600"} hover:text-purple-700 transition-all duration-300`}>
+                                <Link href={SocialLinks.facebook}  target={'_blank'} className={`${theme == 'dark' ? 'text-white' : "text-purple-600"} hover:text-purple-700 transition-all duration-300`}>
                                     <Facebook size={30} />
                                 </Link>
-                                <Link href={SocialLinks.twitter} className={`${theme == 'dark' ? 'text-white' : "text-purple-600"} hover:text-purple-700 transition-all duration-300`}>
+                                <Link href={SocialLinks.twitter} target={'_blank'} className={`${theme == 'dark' ? 'text-white' : "text-purple-600"} hover:text-purple-700 transition-all duration-300`}>
                                     <Twitter size={30} />
                                 </Link>
-                                <Link href={SocialLinks.instagram} className={`${theme == 'dark' ? 'text-white' : "text-purple-600"} hover:text-purple-700 transition-all duration-300`}>
+                                <Link href={SocialLinks.instagram} target={'_blank'} className={`${theme == 'dark' ? 'text-white' : "text-purple-600"} hover:text-purple-700 transition-all duration-300`}>
                                     <Instagram size={30} />
                                 </Link>
-                                <Link href={SocialLinks.linkedin} className={`${theme == 'dark' ? 'text-white' : "text-purple-600"} hover:text-purple-700 transition-all duration-300`}>
+                                <Link href={SocialLinks.linkedin} target={'_blank'} className={`${theme == 'dark' ? 'text-white' : "text-purple-600"} hover:text-purple-700 transition-all duration-300`}>
                                     <LinkedIn size={30} />
                                 </Link>
-                                <Link href={SocialLinks.github} className={`${theme == 'dark' ? 'text-white' : "text-purple-600"} hover:text-purple-700 transition-all duration-300`}>
+                                <Link href={SocialLinks.github} target={'_blank'} className={`${theme == 'dark' ? 'text-white' : "text-purple-600"} hover:text-purple-700 transition-all duration-300`}>
                                     <Github size={30} fill="#00000" />
                                 </Link>
-                                <Link href={SocialLinks.whatsapp} className={`${theme == 'dark' ? 'text-white' : "text-purple-600"} hover:text-purple-700 transition-all duration-300`}>
+                                <Link href={SocialLinks.whatsapp} target={'_blank'} className={`${theme == 'dark' ? 'text-white' : "text-purple-600"} hover:text-purple-700 transition-all duration-300`}>
                                     <Whatsapp size={30} />
                                 </Link>
                                 <div style={{width: '2px'}} className={`${theme == 'dark' ? 'bg-white' : "bg-purple-600"} h-20 md:block hidden border-left`}></div>
@@ -200,16 +208,26 @@ export default function Home({projects, posts, skills, experience}: IHomeProps) 
 
             <Element name='projects' className=''>
                 <div className="max-w-7xl mx-auto px-5 py-20 md:px-0 space-y-5">
-                    <div className=' flex space-x-5 items-center'>
+                    <div className=' md:flex items-center'>
                         <div className='md:w-1/2'>
                             <p className='text-2xl md:text-3xl  mb-0 uppercase font-semibold bg-clip-text bg-gradient-to-r from-purple-800 to-purple-400 text-transparent'>02. Featured Projects</p>
                             <p className='text-xl text-gray-500'>Check out a selection of some amazing projects I worked on.</p>
                         </div>
-                        <hr className='border-black flex-1 hidden md:block' />
+                        <div className='flex-1 md:flex hidden md:justify-end '>
+                            {/* <hr className='border-black flex-1 hidden md:block' /> */}
+                            <div className='flex gap-x-4'>
+                                <div role={'button'} onClick={() => slider.current?.slickPrev()} className="w-14 h-14 hover:bg-gray-200 active:bg-gray-50 duration-500 flex items-center justify-center cursor-pointer border">
+                                    <ChevronLeftIcon className='w-8' />
+                                </div>
+                                <div role={'button'} onClick={() => slider.current?.slickNext()} className="w-14 h-14 hover:bg-gray-200 active:bg-gray-50 duration-500 flex items-center justify-center cursor-pointer border">
+                                    <ChevronRightIcon className='w-8' />
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 
                     <div>
-                        <Slider {...settings}  >
+                        <Slider {...settings} ref={slider} >
                             {
                                 projects?.filter(project => project.status === 'active').map(project => (
                                     <div className="md:px-2" key={project.id}>
@@ -220,13 +238,26 @@ export default function Home({projects, posts, skills, experience}: IHomeProps) 
                         </Slider>
                     </div>
 
-                    <div className="space-x-5 pt-10">
-                        <Link href={'/projects'} >
-                            <Button className='bg-transparent border-black text-black hover:text-white hover:bg-black'>See more Projects</Button> 
-                        </Link>
-                        <ScrollLink to="contact" className='cursor-pointer' offset={-50} duration={500} spy={true} hashSpy={true} activeClass="text-purple-600" smooth={true} >
-                            <Button className=''>Let&apos;s Talk</Button> 
-                        </ScrollLink>
+                    <div className='md:hidden '>
+                        <div className='flex justify-between gap-x-4'>
+                            <div role={'button'} onClick={() => slider.current?.slickPrev()} className="w-10 h-10 hover:bg-gray-200 active:bg-gray-50 duration-500 flex items-center justify-center cursor-pointer border">
+                                <ChevronLeftIcon className='w-5' />
+                            </div>
+                            <div role={'button'} onClick={() => slider.current?.slickNext()} className="w-10 h-10 hover:bg-gray-200 active:bg-gray-50 duration-500 flex items-center justify-center cursor-pointer border">
+                                <ChevronRightIcon className='w-5' />
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div className="flex ">
+                        <div className="space-x-5 pt-5 md:pt-10">
+                            <Link href={'/projects'} >
+                                <Button className='bg-transparent border-black text-black hover:text-white hover:bg-black'>See more Projects</Button> 
+                            </Link>
+                            <ScrollLink to="contact" className='cursor-pointer' offset={-50} duration={500} spy={true} hashSpy={true} activeClass="text-purple-600" smooth={true} >
+                                <Button className=''>Let&apos;s Talk</Button> 
+                            </ScrollLink>
+                        </div>
                     </div>
                 </div>
             </Element>
@@ -249,7 +280,7 @@ export default function Home({projects, posts, skills, experience}: IHomeProps) 
 
                     
                     <div className="mt-10 pt-10">
-                        <Link href={posts?.feed.url || ''} >
+                        <Link href={posts?.feed.link || ''} target={'_blank'} >
                             <Button className='bg-transparent border-black text-black hover:text-white hover:bg-black'>Visit My Blog</Button> 
                         </Link>
                     </div>
@@ -265,16 +296,19 @@ export default function Home({projects, posts, skills, experience}: IHomeProps) 
 
                 <div className='my-20 md:flex justify-center space-y-5 md:space-y-0 md:gap-x-10'>
                     <div className='text-center'>
-                        {/* <EnvelopeIcon className='w-8 mx-auto' /> */}
-                        <Button className='inline-flex  mx-auto items-center'>
-                            <p className='text-xl md:text-2xl lowercase'>utyemma@gmail.com</p>
-                        </Button>
+                        <Link href={`mailto:utyemma@gmail.com`}>
+                            <Button  className='inline-flex  mx-auto items-center'>
+                                <p className='text-xl md:text-2xl lowercase'>utyemma@gmail.com</p>
+                            </Button>
+                        </Link>
                     </div>
                     <div className='text-center'>
                         {/* <PhoneIcon className='w-8 mx-auto' /> */}
-                        <Button className='inline-flex  mx-auto items-center'>
-                            <p className='text-xl md:text-2xl lowercase'>+234 903 870 5881</p>
-                        </Button>
+                        <Link href={`tel:+2349038705881`} >
+                            <Button className='inline-flex  mx-auto items-center'>
+                                <p className='text-xl md:text-2xl lowercase'>+234 903 870 5881</p>
+                            </Button>
+                        </Link>
                     </div>
                 </div>
                 
@@ -285,27 +319,27 @@ export default function Home({projects, posts, skills, experience}: IHomeProps) 
                 <div className='flex justify-center md:justify-between gap-x-4 items-center w-full mb-5'>
                     <hr className='w-1/4 border-gray-400 hidden md:block' />
                     <div className='space-x-8 md:space-x-5 flex flex-1 justify-center  items-center'>
-                        <Link href={SocialLinks.linkedin} className='transition-all duration-500 flex items-center  gap-x-2  hover:-translate-y-2'>
+                        <Link href={SocialLinks.linkedin} target={'_blank'} className='transition-all duration-500 flex items-center  gap-x-2  hover:-translate-y-2'>
                             <LinkedIn size={30} fill="#fafafa" /> <span className='hidden md:block'>LinkedIn</span>
                         </Link>
                         <hr className='w-3 hidden md:block border-gray-400' />
-                        <Link href={SocialLinks.twitter} className='transition-all duration-500 flex items-center gap-x-2  hover:-translate-y-2'>
+                        <Link href={SocialLinks.twitter}  target={'_blank'} className='transition-all duration-500 flex items-center gap-x-2  hover:-translate-y-2'>
                             <Twitter size={30} fill="#fafafa" /> <span className='hidden md:block'>Twitter</span>
                         </Link>
                         <hr className='w-3 hidden md:block border-gray-400' />
-                        <Link href={SocialLinks.github} className='transition-all duration-500 flex items-center gap-x-2 hover:-translate-y-2'>
+                        <Link href={SocialLinks.github}  target={'_blank'} className='transition-all duration-500 flex items-center gap-x-2 hover:-translate-y-2'>
                             <Github size={30} fill="#fafafa" /> <span className='hidden md:block'>Github</span>
                         </Link>
                         <hr className='w-3 hidden md:block border-gray-400' />
-                        <Link href={SocialLinks.facebook} className='transition-all duration-500 flex items-center gap-x-2  hover:-translate-y-2'>
+                        <Link href={SocialLinks.facebook} target={'_blank'} className='transition-all duration-500 flex items-center gap-x-2  hover:-translate-y-2'>
                             <Facebook size={30} fill="#fafafa" /> <span className='hidden md:block'>Facebook</span>
                         </Link>
                         <hr className='w-3 hidden md:block border-gray-400' />
-                        <Link href={SocialLinks.instagram} className='transition-all duration-500 flex items-center gap-x-2 hover:-translate-y-2'>
+                        <Link href={SocialLinks.instagram} target={'_blank'} className='transition-all duration-500 flex items-center gap-x-2 hover:-translate-y-2'>
                             <Instagram size={30} fill="#fafafa" /> <span className='hidden md:block'>Instagram</span>
                         </Link>
                         <hr className='w-3 hidden md:block border-gray-400' />
-                        <Link href={SocialLinks.whatsapp} className='transition-all duration-500 flex items-center gap-x-2 hover:-translate-y-2'>
+                        <Link href={SocialLinks.whatsapp} target={'_blank'} className='transition-all duration-500 flex items-center gap-x-2 hover:-translate-y-2'>
                             <Whatsapp size={30} fill="#fafafa" /> <span className='hidden md:block'>WhatsApp</span>
                         </Link>
                         {/* <hr className='w-3 hidden md:block' /> */}
