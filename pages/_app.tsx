@@ -5,6 +5,7 @@ import type { AppProps } from 'next/app'
 import { useEffect } from 'react'
 import AOS from 'aos';
 import { ThemeProvider } from 'next-themes';
+import { Meta } from '../components/Meta/Meta';
 
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -17,6 +18,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
     return (
         <ThemeProvider >
+            <Meta />
             <Component {...pageProps} />
         </ThemeProvider>
     )

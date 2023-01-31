@@ -34,6 +34,7 @@ import { ISkill } from '../types/skills'
 import { IExperience } from '../types/experience'
 import { SocialLinks } from './api/data/social'
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline'
+import { Meta } from '../components/Meta/Meta'
 
 
 interface IHomeProps {
@@ -118,7 +119,7 @@ export default function Home({projects, posts, skills, experience}: IHomeProps) 
                                 {/* <span className="absolute inset-0 border bg-white"></span> */}
 
                                 <div className="aspect-square bg-gray-200 mb-2 overflow-hidden relative ">
-                                    <img src="/images/utyemma.jpg" alt="" className='object-cover min-h-full group-hover:scale-105 transition-all duration-1000' />
+                                    <img src="/images/utyemma.jpg" alt="" className='object-cover  min-h-full group-hover:scale-105 transition-all duration-1000' />
                                 </div>
                                 
                                 <div className="mt-1 p-5 bg-purple-700 flex justify-center relative gap-x-1">
