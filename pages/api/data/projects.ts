@@ -2,6 +2,54 @@ import { IProject } from "../../../types/projects";
 
 export const ProjectList: IProject[] = [
     {
+        id: 14,
+        title: "Child and Adolesent Mind Institute, Africa (CAMI Africa)",
+        description: "",
+        link: "https://camiafrica.org",
+        image: "/images/screenshots/cami-africa.png",
+        status: 'active',
+        tech: ['Wordpress', 'MySQL', "PHP"],
+        type: "Pediatric Care Institute and Special Needs Center",
+        github: null
+    },
+
+    {
+        id: 13,
+        title: "Student Founders Platform",
+        description: "",
+        link: "https://studentfoundersplatform.org",
+        image: "/images/screenshots/student-founders.png",
+        status: 'active',
+        tech: ['Wordpress', 'MySQL', "PHP"],
+        type: "Student Entrepreneurship development organization",
+        github: null
+    },
+
+    {
+        id: 12,
+        title: "Federal Governement College Ibillo Alumni Association",
+        description: "",
+        link: "https://fgcibilloalumni.com",
+        image: "/images/screenshots/fgciaa-ibillo.png",
+        status: 'active',
+        tech: ['Laravel', 'MySQL', "Alpine JS"],
+        type: "Alumni Association Website/Portal",
+        github: null
+    },
+
+    {
+        id: 11,
+        title: "Leadaa Commerce",
+        description: "",
+        link: "https://leadaa.shop",
+        image: "/images/screenshots/leadaa-commerce.png",
+        status: 'active',
+        tech: ['Node JS', 'ReactJS', "Mongo DB"],
+        type: "Multi-Store Ecommerce Management Platform",
+        github: null
+    },
+
+    {
         id: 1,
         title: "Follow Max",
         description: "",
@@ -43,7 +91,7 @@ export const ProjectList: IProject[] = [
         description: "",
         link: "https://libraclass.com",
         image: "/images/screenshots/libraclass.png",
-        status: 'active',
+        status: 'inactive',
         tech: ['Laravel', "MySQL"],
         type: "E-Learning Platform",
         github: null
@@ -67,7 +115,7 @@ export const ProjectList: IProject[] = [
         description: "",
         link: "https://dataseller.io",
         image: "/images/screenshots/dataseller.png",
-        status: 'active',
+        status: 'inactive',
         tech: ['Laravel', "MySql", "HTML5", "CSS3"],
         type: "Crypto to Fiat Exchange Platform",
         github: null
@@ -91,7 +139,7 @@ export const ProjectList: IProject[] = [
         description: "",
         link: "https://sydmondfoundation.org/",
         image: "/images/screenshots/sydmond-foundation.png",
-        status: 'active',
+        status: 'inactive',
         tech: ['Laravel', "MySql"],
         type: "NGO/Charity Website",
         github: null
