@@ -2,18 +2,6 @@ import { IProject } from "../../../types/projects";
 
 export const ProjectList: IProject[] = [
     {
-        id: 14,
-        title: "Child and Adolesent Mind Institute, Africa (CAMI Africa)",
-        description: "",
-        link: "https://camiafrica.org",
-        image: "/images/screenshots/cami-africa.png",
-        status: 'active',
-        tech: ['Wordpress', 'MySQL', "PHP"],
-        type: "Pediatric Care Institute and Special Needs Center",
-        github: null
-    },
-
-    {
         id: 13,
         title: "Student Founders Platform",
         description: "",
@@ -38,6 +26,18 @@ export const ProjectList: IProject[] = [
     },
 
     {
+        id: 14,
+        title: "Child and Adolesent Mind Institute, Africa (CAMI Africa)",
+        description: "",
+        link: "https://camiafrica.org",
+        image: "/images/screenshots/cami-africa.png",
+        status: 'active',
+        tech: ['Wordpress', 'MySQL', "PHP"],
+        type: "Pediatric Care Institute and Special Needs Center",
+        github: null
+    },
+
+    {
         id: 11,
         title: "Leadaa Commerce",
         description: "",
@@ -46,6 +46,18 @@ export const ProjectList: IProject[] = [
         status: 'active',
         tech: ['Node JS', 'ReactJS', "Mongo DB"],
         type: "Multi-Store Ecommerce Management Platform",
+        github: null
+    },
+
+    {
+        id: 15,
+        title: "Ikenna Ugwu's Portfolio",
+        description: "",
+        link: "https://ikennaugwuc.com",
+        image: "/images/screenshots/ikenna-ugwu.png",
+        status: 'active',
+        tech: ['Wordpress', 'MySQL', "PHP"],
+        type: "Personal Portfolio Website",
         github: null
     },
 
