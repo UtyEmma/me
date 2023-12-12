@@ -2,8 +2,32 @@ import { IProject } from "../../../types/projects";
 
 export const ProjectList: IProject[] = [
     {
+        id: 14,
+        title: "Ariselight Properties Limited",
+        description: "",
+        link: "http://ariselightproperties.com.ng",
+        image: "/images/screenshots/arise-light.png",
+        status: 'active',
+        tech: ["PHP", 'Laravel', 'Tailwind'],
+        type: "Real estate website",
+        github: null
+    },
+    
+    // {
+    //     id: 14,
+    //     title: "Xtravalue Added Telecom",
+    //     description: "",
+    //     link: "https://valueaddedtel.com/",
+    //     image: "/images/screenshots/arise-light.png",
+    //     status: 'active',
+    //     tech: ["PHP", 'Laravel', 'Tailwind'],
+    //     type: "VTU Finance Web application",
+    //     github: null
+    // },
+
+    {
         id: 13,
-        title: "Student Founders Platform",
+        title: "Student Founders Entrepreneurial Platform",
         description: "",
         link: "https://studentfoundersplatform.org",
         image: "/images/screenshots/student-founders.png",
