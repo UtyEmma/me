@@ -2,7 +2,7 @@ import { IProject } from "../../../types/projects";
 
 export const ProjectList: IProject[] = [
     {
-        id: 21,
+        id: 22,
         title: "Vemdot",
         description: "",
         link: "https://vemdot.com",
