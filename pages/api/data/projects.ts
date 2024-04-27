@@ -163,7 +163,7 @@ export const ProjectList: IProject[] = [
         description: "",
         link: "https://followmax.org",
         image: "/images/screenshots/followmax.png",
-        status: 'active',
+        status: 'inactive',
         tech: ['Laravel', 'ReactJS', "MySQL"],
         type: "Social Media Booster Web App",
         github: null
