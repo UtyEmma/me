@@ -3,6 +3,18 @@ import { IProject } from "../../../types/projects";
 export const ProjectList: IProject[] = [
     {
         id: 21,
+        title: "Vemdot",
+        description: "",
+        link: "https://vemdot.com",
+        image: "/images/screenshots/vemdot.png",
+        status: 'active',
+        tech: ['Laravel', 'Postman'],
+        type: "Food Delivery Mobile Application",
+        github: null
+    },
+
+    {
+        id: 21,
         title: "Vital Sync",
         description: "",
         link: "https://vitalsync.bloodrescue.org",
