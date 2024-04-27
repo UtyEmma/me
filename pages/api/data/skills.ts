@@ -56,4 +56,14 @@ export const Skills : ISkill[] = [
         logo: '/images/social/nextjs.svg',
         status: true
     },
+    {
+        name: 'Livewire',
+        logo: '/images/social/livewire.svg',
+        status: true
+    },
+    {
+        name: 'Vue JS',
+        logo: '/images/social/vue.svg',
+        status: true
+    },
 ]

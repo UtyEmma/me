@@ -2,7 +2,79 @@ import { IProject } from "../../../types/projects";
 
 export const ProjectList: IProject[] = [
     {
-        id: 14,
+        id: 21,
+        title: "Vital Sync",
+        description: "",
+        link: "https://vitalsync.bloodrescue.org",
+        image: "/images/screenshots/vitalsync.png",
+        status: 'active',
+        tech: ['Laravel', 'Livewire'],
+        type: "Blood Donation/ Blood bank management System",
+        github: null
+    },
+
+    {
+        id: 20,
+        title: "Freelance Gadgets",
+        description: "",
+        link: "https://freelancegadgets.com",
+        image: "/images/screenshots/freelancegadgets.png",
+        status: 'active',
+        tech: ['Laravel', 'VueJS', 'Inertia'],
+        type: "E-Commerce Website",
+        github: null
+    },
+
+    {
+        id: 19,
+        title: "Moniest",
+        description: "",
+        link: "https://moniest.com",
+        image: "/images/screenshots/moniest.png",
+        status: 'active',
+        tech: ['Laravel', 'mySQL', 'Livewire'],
+        type: "Currency Converter / Blog Website",
+        github: null
+    },
+    
+    {
+        id: 18,
+        title: "Blood Cells Rescue Initiatives",
+        description: "",
+        link: "https://bloodrescue.org/",
+        image: "/images/screenshots/bloodrescue.png",
+        status: 'active',
+        tech: ['PHP', 'mySQL', 'Wordpress'],
+        type: "NGO/Charity Website",
+        github: null
+    },
+
+    {
+        id: 17,
+        title: "Jobberlad",
+        description: "",
+        link: "https://jobberlad.com/",
+        image: "/images/screenshots/jobberlad.png",
+        status: 'active',
+        tech: ['Laravel', 'mySQL', 'Livewire'],
+        type: "Job board and CV Builder",
+        github: null
+    },
+
+    {
+        id: 16,
+        title: "Xtravalue Added Telecom",
+        description: "",
+        link: "https://valueaddedtel.com/",
+        image: "/images/screenshots/valueaddedtel.png",
+        status: 'active',
+        tech: ["PHP", 'Laravel', 'Livewire'],
+        type: "VTU Finance Web application",
+        github: null
+    },
+    
+    {
+        id: 15,
         title: "Ariselight Properties Limited",
         description: "",
         link: "http://ariselightproperties.com.ng",
@@ -12,21 +84,9 @@ export const ProjectList: IProject[] = [
         type: "Real estate website",
         github: null
     },
-    
-    // {
-    //     id: 14,
-    //     title: "Xtravalue Added Telecom",
-    //     description: "",
-    //     link: "https://valueaddedtel.com/",
-    //     image: "/images/screenshots/arise-light.png",
-    //     status: 'active',
-    //     tech: ["PHP", 'Laravel', 'Tailwind'],
-    //     type: "VTU Finance Web application",
-    //     github: null
-    // },
 
     {
-        id: 13,
+        id: 14,
         title: "Student Founders Entrepreneurial Platform",
         description: "",
         link: "https://studentfoundersplatform.org",
@@ -50,7 +110,7 @@ export const ProjectList: IProject[] = [
     },
 
     {
-        id: 14,
+        id: 13,
         title: "Child and Adolesent Mind Institute, Africa (CAMI Africa)",
         description: "",
         link: "https://camiafrica.org",
@@ -65,7 +125,7 @@ export const ProjectList: IProject[] = [
         id: 11,
         title: "Leadaa Commerce",
         description: "",
-        link: "https://leadaa.shop",
+        link: "https://leadaa.vercel.app",
         image: "/images/screenshots/leadaa-commerce.png",
         status: 'active',
         tech: ['Node JS', 'ReactJS', "Mongo DB"],
@@ -115,7 +175,7 @@ export const ProjectList: IProject[] = [
         description: "",
         link: "https://splendormoneyschool.com",
         image: "/images/screenshots/splendor-money-school.png",
-        status: 'active',
+        status: 'inactive',
         tech: ['ReactJS', 'Laravel', "InertiaJS"],
         type: "E-Learning Platform",
         github: null
