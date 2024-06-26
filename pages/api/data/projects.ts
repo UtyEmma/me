@@ -187,7 +187,7 @@ export const ProjectList: IProject[] = [
         description: "",
         link: "https://jedidiahcares.org",
         image: "/images/screenshots/jedidiahcares.png",
-        status: 'active',
+        status: 'inactive',
         tech: ['ReactJS', 'Laravel', "Inertia JS"],
         type: "NGO/Charity Website",
         github: null
