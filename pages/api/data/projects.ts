@@ -2,6 +2,18 @@ import { IProject } from "../../../types/projects";
 
 export const ProjectList: IProject[] = [
     {
+        id: 23,
+        title: "Healthbubba",
+        description: "",
+        link: "https://vemdot.com",
+        image: "/images/screenshots/healthbubba.png",
+        status: 'active',
+        tech: ['Laravel', 'ReactJS', 'Inertia'],
+        type: "Medtech Landing Page",
+        github: null
+    },
+
+    {
         id: 22,
         title: "Vemdot",
         description: "",
@@ -271,7 +283,7 @@ export const ProjectList: IProject[] = [
         description: "",
         link: "https://buyproductng.com/",
         image: "/images/screenshots/uncommonproduct.png",
-        status: 'active',
+        status: 'inactive',
         tech: ['PHP', "Wordpress"],
         type: "Ecommerce Website",
         github: null
