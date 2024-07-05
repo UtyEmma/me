@@ -2,14 +2,25 @@ import { IProject } from "../../../types/projects";
 
 export const ProjectList: IProject[] = [
     {
+        id: 24,
+        title: "Bezalel Frontiers",
+        description: "",
+        link: "https://vemdot.com",
+        image: "/images/screenshots/healthbubba.png",
+        status: 'active',
+        tech: ['Laravel', 'VueJS', 'FilamentPHP', 'Inertia'],
+        type: "Management Consulting Firm Website",
+        github: null
+    },
+    {
         id: 23,
         title: "Healthbubba",
         description: "",
         link: "https://vemdot.com",
         image: "/images/screenshots/healthbubba.png",
         status: 'active',
-        tech: ['Laravel', 'ReactJS', 'Inertia'],
-        type: "Medtech Landing Page",
+        tech: ['Laravel', 'ReactJS', 'FilamentPHP', 'Inertia'],
+        type: "Health tech Landing Page",
         github: null
     },
 
