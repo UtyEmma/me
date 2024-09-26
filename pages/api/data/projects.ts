@@ -25,7 +25,7 @@ export const ProjectList: IProject[] = [
     },
     {
         id: 25,
-        title: "Jocoh Groups",
+        title: "Jocoh Group",
         description: "",
         link: "https://jocohgroups.com",
         image: "/images/screenshots/jocoh-groups.png",
