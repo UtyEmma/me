@@ -2,6 +2,39 @@ import { IProject } from "../../../types/projects";
 
 export const ProjectList: IProject[] = [
     {
+        id: 27,
+        title: "Jocoh Farms",
+        description: "",
+        link: "https://jocohfarms.com",
+        image: "/images/screenshots/jocoh-farms.png",
+        status: 'active',
+        tech: ['Laravel', 'React JS', 'FilamentPHP', 'Inertia'],
+        type: "Farming Website Landing Page",
+        github: null
+    },
+    {
+        id: 26,
+        title: "Jocoh Stores",
+        description: "",
+        link: "https://jocohstores.com",
+        image: "/images/screenshots/jocoh-stores.png",
+        status: 'active',
+        tech: ['Laravel', 'React JS', 'FilamentPHP', 'Inertia'],
+        type: "Agricultural Products Store",
+        github: null
+    },
+    {
+        id: 25,
+        title: "Jocoh Groups",
+        description: "",
+        link: "https://jocohgroups.com",
+        image: "/images/screenshots/jocoh-groups.png",
+        status: 'active',
+        tech: ['Laravel', 'React JS', 'FilamentPHP', 'Inertia'],
+        type: "Agricultural Company Landing Page",
+        github: null
+    },
+    {
         id: 24,
         title: "Bezalel Frontiers",
         description: "",
